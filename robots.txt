@@ -1,2 +1,4 @@
 User-agent: *
-Allow: /
+Disallow: /
+
+# Temporary soft-launch setting. Remove this block and enable indexing when the custom ScaleOps domain is connected.
