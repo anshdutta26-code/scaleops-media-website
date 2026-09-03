@@ -1,0 +1,27 @@
+name: Validate ScaleOps site
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check required pages and assets
+        run: |
+          test -f index.html
+          test -f systems/index.html
+          test -f services/index.html
+          test -f case-studies/index.html
+          test -f insights/index.html
+          test -f contact/index.html
+          test -f assets/css/styles.css
+          test -f assets/images/contact-hero-s.svg
+      - name: Detect placeholder production domain
+        run: |
+          if grep -R "example.com" sitemap.xml; then
+            echo "Sitemap still uses placeholder domain. This is expected until the custom domain is selected."
+          fi
