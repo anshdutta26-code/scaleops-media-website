@@ -1,0 +1,6 @@
+/* Unified ScaleOps brand lockup — prevents icon/wordmark spacing drift */
+.logo{display:block!important;width:182px!important;min-width:182px!important;height:44px!important;background:url("../images/logo-lockup.svg") left center/contain no-repeat!important;filter:drop-shadow(0 0 12px rgba(47,128,237,.18))}
+.logo>.logo-mark,.logo>.logo-copy{display:none!important}
+.footer-logo{display:block!important;width:170px!important;height:42px!important;background:url("../images/logo-lockup.svg") left center/contain no-repeat!important}
+.footer-logo>.logo-mark,.footer-logo>.logo-copy{display:none!important}
+@media(max-width:820px){.logo{width:158px!important;min-width:158px!important;height:40px!important}.footer-logo{width:155px!important;height:40px!important}}
