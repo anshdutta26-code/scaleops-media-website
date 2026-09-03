@@ -1,34 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760">
 <defs>
-  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#020712"/><stop offset="1" stop-color="#03112b"/></linearGradient>
-  <linearGradient id="sTop" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#7ce7ff"/><stop offset=".28" stop-color="#249cff"/><stop offset=".67" stop-color="#2263f2"/><stop offset="1" stop-color="#7657ff"/></linearGradient>
-  <linearGradient id="sSide" x1="0" x2="1"><stop stop-color="#0f4dc8"/><stop offset="1" stop-color="#2336a8"/></linearGradient>
-  <linearGradient id="tower" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0a2a62"/><stop offset="1" stop-color="#03132f"/></linearGradient>
-  <radialGradient id="halo"><stop stop-color="#238eff" stop-opacity=".62"/><stop offset=".35" stop-color="#1756e8" stop-opacity=".2"/><stop offset="1" stop-color="#061329" stop-opacity="0"/></radialGradient>
-  <filter id="glow"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-  <filter id="smallGlow"><feDropShadow dx="0" dy="0" stdDeviation="7" flood-color="#33a9ff" flood-opacity=".72"/></filter>
-  <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#2a77e6" stroke-opacity=".08"/></pattern>
+<radialGradient id="halo"><stop stop-color="#2F80ED" stop-opacity=".42"/><stop offset=".42" stop-color="#174FB8" stop-opacity=".12"/><stop offset="1" stop-color="#020712" stop-opacity="0"/></radialGradient>
+<linearGradient id="tower" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0B2C68"/><stop offset="1" stop-color="#03122B"/></linearGradient>
+<filter id="glow"><feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#2F80ED" flood-opacity=".65"/></filter>
+<pattern id="grid" width="46" height="46" patternUnits="userSpaceOnUse"><path d="M46 0H0V46" fill="none" stroke="#2F80ED" stroke-opacity=".07"/></pattern>
 </defs>
-<rect width="1600" height="900" fill="url(#bg)"/><rect width="1600" height="900" fill="url(#grid)"/>
-<g opacity=".38" stroke="#2174df" fill="none"><path d="M85 760L800 420l710 344"/><path d="M75 820L800 475l720 350"/><path d="M250 875L800 610l545 265"/></g>
-<ellipse cx="820" cy="560" rx="510" ry="330" fill="url(#halo)"/>
-<g opacity=".58" fill="#55c7ff"><circle cx="255" cy="630" r="5"/><circle cx="1410" cy="606" r="6"/><circle cx="1260" cy="275" r="4"/><circle cx="400" cy="240" r="4"/></g>
-<!-- left data tower -->
-<g transform="translate(185 405)" filter="url(#smallGlow)"><polygon points="0,70 78,28 156,70 78,112" fill="#0c2f6e" stroke="#287ee8"/><polygon points="0,70 78,112 78,305 0,263" fill="#041534" stroke="#1a58a9"/><polygon points="156,70 78,112 78,305 156,263" fill="url(#tower)" stroke="#2775da"/><g fill="#58c5ff"><rect x="18" y="121" width="39" height="6" rx="3"/><rect x="18" y="158" width="39" height="6" rx="3"/><rect x="18" y="195" width="39" height="6" rx="3"/></g></g>
-<!-- right data tower -->
-<g transform="translate(1265 430) scale(.9)" filter="url(#smallGlow)"><polygon points="0,70 78,28 156,70 78,112" fill="#0c2f6e" stroke="#287ee8"/><polygon points="0,70 78,112 78,305 0,263" fill="#041534" stroke="#1a58a9"/><polygon points="156,70 78,112 78,305 156,263" fill="url(#tower)" stroke="#2775da"/><g fill="#58c5ff"><rect x="18" y="121" width="39" height="6" rx="3"/><rect x="18" y="158" width="39" height="6" rx="3"/><rect x="18" y="195" width="39" height="6" rx="3"/></g></g>
-<!-- holographic base -->
-<g transform="translate(810 690)" filter="url(#smallGlow)"><ellipse rx="350" ry="78" fill="#061633" stroke="#238cff" stroke-width="4"/><ellipse rx="285" ry="60" fill="none" stroke="#56c6ff" stroke-width="3" opacity=".8"/><ellipse rx="202" ry="42" fill="#0c3f9b" opacity=".45"/><ellipse rx="122" ry="23" fill="#36a7ff" opacity=".5"/></g>
-<!-- floating S -->
-<g transform="translate(455 95)" filter="url(#glow)">
-  <polygon points="120,92 510,18 710,100 366,171" fill="url(#sTop)" stroke="#8aeaff" stroke-width="3"/>
-  <polygon points="366,171 710,100 612,218 309,283" fill="#1273e7" stroke="#3aa8ff"/>
-  <polygon points="309,283 612,218 462,375 130,450" fill="url(#sTop)" stroke="#67d0ff" stroke-width="2"/>
-  <polygon points="130,450 462,375 390,487 28,555" fill="url(#sSide)" stroke="#286ee8"/>
-  <polygon points="28,555 390,487 530,569 151,642" fill="url(#sTop)" stroke="#55bdff" stroke-width="2"/>
-  <polygon points="151,642 530,569 424,676 77,739" fill="#1735a1" stroke="#315edf"/>
-</g>
-<!-- circuitry -->
-<g stroke="#329dff" stroke-width="2" fill="none" opacity=".5"><path d="M355 565H455l54 45h103"/><path d="M1100 550h-86l-55 52h-88"/><path d="M1180 335h-95l-45 38h-62"/></g>
-<g fill="#6cd4ff" filter="url(#smallGlow)"><circle cx="355" cy="565" r="5"/><circle cx="612" cy="610" r="5"/><circle cx="1180" cy="335" r="5"/><circle cx="871" cy="602" r="5"/></g>
+<rect width="1200" height="760" fill="#020712"/><rect width="1200" height="760" fill="url(#grid)"/>
+<ellipse cx="625" cy="565" rx="430" ry="230" fill="url(#halo)"/>
+<g opacity=".48" stroke="#2465C7" fill="none"><path d="M120 680L600 455l485 228"/><path d="M160 735L600 525l445 210"/></g>
+<g transform="translate(110 360)" filter="url(#glow)"><polygon points="0,56 62,24 124,56 62,88" fill="#0B2C68" stroke="#2F80ED"/><polygon points="0,56 62,88 62,220 0,188" fill="#03142F" stroke="#2457A3"/><polygon points="124,56 62,88 62,220 124,188" fill="url(#tower)" stroke="#2F80ED"/><g fill="#56C8FF"><rect x="18" y="108" width="33" height="5" rx="2"/><rect x="18" y="139" width="33" height="5" rx="2"/><rect x="18" y="170" width="33" height="5" rx="2"/></g></g>
+<g transform="translate(965 365)" filter="url(#glow)"><polygon points="0,56 62,24 124,56 62,88" fill="#0B2C68" stroke="#2F80ED"/><polygon points="0,56 62,88 62,220 0,188" fill="#03142F" stroke="#2457A3"/><polygon points="124,56 62,88 62,220 124,188" fill="url(#tower)" stroke="#2F80ED"/><g fill="#56C8FF"><rect x="18" y="108" width="33" height="5" rx="2"/><rect x="18" y="139" width="33" height="5" rx="2"/><rect x="18" y="170" width="33" height="5" rx="2"/></g></g>
+<g transform="translate(600 600)" filter="url(#glow)"><ellipse rx="330" ry="72" fill="#071731" stroke="#2F80ED" stroke-width="4"/><ellipse rx="260" ry="55" fill="none" stroke="#69A7FF" stroke-width="3"/><ellipse rx="175" ry="34" fill="#0C3E92" opacity=".42"/></g>
+<image x="328" y="88" width="544" height="428" preserveAspectRatio="xMidYMid meet" href="logo-mark.svg"/>
+<g fill="#69CFFF"><circle cx="286" cy="455" r="5"/><circle cx="905" cy="446" r="5"/><circle cx="1030" cy="250" r="4"/></g>
 </svg>
