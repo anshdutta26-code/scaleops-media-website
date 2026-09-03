@@ -1,3 +1,4 @@
+@import url("logo-fix.css");
 /* Internal pages — locked to approved ScaleOps neon concept */
 .concept-v2{--cx:#2587ff;--cc:#54c9ff;--cv:#7557ff;--cg:#39e6a9;--cl:rgba(35,103,190,.62);background:#010611;color:#f7faff}
 .concept-v2:before{opacity:.16;background-size:48px 48px}.concept-v2 .wrap{width:min(1480px,calc(100% - 42px))}
