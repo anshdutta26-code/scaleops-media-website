@@ -1,57 +1,13 @@
 # ScaleOps Media Website
 
-Futuristic, responsive ScaleOps Media website based on the approved dark neon growth-systems concept.
+Approved reference-faithful rebuild.
 
-## Pages
-- `/` Home
-- `/systems/`
-- `/services/`
-- `/case-studies/`
-- `/insights/`
-- `/contact/`
-- `/thanks/`
+Pages: Home, Systems, Services, Case Studies, Insights, Contact, Thanks.
 
-## Positioning
-ScaleOps Media is presented as a **growth systems company — not another marketing agency**.
+Brand system: deep navy, electric blue, cyan and violet accents. Core website artwork is SVG/vector for resolution-independent rendering.
 
-**Acquire → Convert → Retain → Operate → Scale**
+Lead routing: Contact form posts to FormSubmit using subject `New ScaleOps Media Website Lead`.
 
-Primary CTA: **Book a Strategy Call / Growth Systems Audit**.
+Booking time slots: `12 PM`, `1 PM`, `2 PM`, `3 PM`, `4 PM`, `Flexible`.
 
-## Services
-- Authority Content Systems
-- Paid Acquisition Systems
-- Creative Strategy & Production
-- Funnel & CRO Systems
-- Email & Lifecycle Marketing
-- Analytics & Dashboards
-- Automation Systems
-- Growth Systems Audit
-
-## Visual system
-The site uses custom HD SVG artwork for the Home, Systems, Services, Case Studies and Insights pages, plus the supplied `assets/images/contact-hero-s.png` artwork on the Contact page. `assets/images/logo-mark.svg` is used as the ScaleOps header mark and favicon.
-
-## Contact form
-The Contact page is active. Submissions are sent through FormSubmit to the configured ScaleOps lead inbox with the subject:
-
-`New ScaleOps Media Website Lead`
-
-A Gmail label named **ScaleOps Website Leads** has been created for lead organization, and the lead-monitoring automation checks for new website enquiries and surfaces the submitted lead details.
-
-## Deployment
-`.github/workflows/deploy-pages.yml` deploys the static site from `main` to GitHub Pages. Validation and deployment workflows are both enabled.
-
-## Current launch status
-The GitHub Pages preview is live. It remains intentionally configured with `noindex,nofollow` and a blocking `robots.txt` until the dedicated ScaleOps domain is connected.
-
-## Custom-domain launch
-When the domain is connected we will:
-- switch legitimate pages to `index,follow`
-- allow crawling in `robots.txt`
-- create the production sitemap
-- add canonical URLs and social metadata
-- verify HTTPS and redirects
-- connect Google Search Console and analytics
-
-## Automation
-`AGENTS.md` contains operating guardrails for future Codex maintenance, SEO validation, content workflows and low-risk deployment automation.
+Temporary preview remains `noindex` until the dedicated ScaleOps domain launch.
