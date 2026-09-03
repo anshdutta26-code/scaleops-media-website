@@ -9,43 +9,49 @@ Futuristic, responsive ScaleOps Media website based on the approved dark neon gr
 - `/case-studies/`
 - `/insights/`
 - `/contact/`
+- `/thanks/`
 
 ## Positioning
-ScaleOps Media is presented as a **growth systems company — not another marketing agency**. The operating model is:
+ScaleOps Media is presented as a **growth systems company — not another marketing agency**.
 
 **Acquire → Convert → Retain → Operate → Scale**
 
-Primary CTA: **Growth Systems Audit**.
+Primary CTA: **Book a Strategy Call / Growth Systems Audit**.
 
 ## Services
-- Growth Systems Audit
-- Authority Content & SEO
-- Paid Acquisition
+- Authority Content Systems
+- Paid Acquisition Systems
 - Creative Strategy & Production
-- Funnel & CRO
-- CRM & Lifecycle Automation
-- Analytics & RevOps
-- Growth Ops & SOPs
+- Funnel & CRO Systems
+- Email & Lifecycle Marketing
+- Analytics & Dashboards
+- Automation Systems
+- Growth Systems Audit
 
-## Current launch status
-The repository is ready for a GitHub Pages soft launch. The temporary github.io preview is deliberately configured with `noindex,nofollow` plus a blocking `robots.txt` so Google does not index the preview URL before the final custom domain is connected.
+## Visual system
+The site uses custom HD SVG artwork for the Home, Systems, Services, Case Studies and Insights pages, plus the supplied `assets/images/contact-hero-s.png` artwork on the Contact page. `assets/images/logo-mark.svg` is used as the ScaleOps header mark and favicon.
 
-Real client names, final case-study evidence, business contact information, booking integration, pricing and CRM/form integrations will be added only after approval. No fabricated business claims are used.
+## Contact form
+The Contact page is active. Submissions are sent through FormSubmit to the configured ScaleOps lead inbox with the subject:
 
-## Contact artwork
-`assets/images/contact-hero-s.png` is the exact futuristic blue ScaleOps graphic supplied for the Contact page.
+`New ScaleOps Media Website Lead`
+
+A Gmail label named **ScaleOps Website Leads** has been created for lead organization, and the lead-monitoring automation checks for new website enquiries and surfaces the submitted lead details.
 
 ## Deployment
-`.github/workflows/deploy-pages.yml` deploys the static site from `main` to GitHub Pages after Pages is enabled in repository settings with **Source: GitHub Actions**.
+`.github/workflows/deploy-pages.yml` deploys the static site from `main` to GitHub Pages. Validation and deployment workflows are both enabled.
+
+## Current launch status
+The GitHub Pages preview is live. It remains intentionally configured with `noindex,nofollow` and a blocking `robots.txt` until the dedicated ScaleOps domain is connected.
 
 ## Custom-domain launch
 When the domain is connected we will:
-- switch every legitimate page to `index,follow`
+- switch legitimate pages to `index,follow`
 - allow crawling in `robots.txt`
 - create the production sitemap
 - add canonical URLs and social metadata
 - verify HTTPS and redirects
-- connect Google Search Console
+- connect Google Search Console and analytics
 
 ## Automation
-`AGENTS.md` contains the operating guardrails for future Codex maintenance, SEO validation, content workflows and low-risk deployment automation.
+`AGENTS.md` contains operating guardrails for future Codex maintenance, SEO validation, content workflows and low-risk deployment automation.
