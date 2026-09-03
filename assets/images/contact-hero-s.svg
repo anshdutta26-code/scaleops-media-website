@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="ScaleOps futuristic blue S graphic">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#020712"/><stop offset=".52" stop-color="#050b18"/><stop offset="1" stop-color="#01040b"/>
+    </linearGradient>
+    <linearGradient id="ribbon" x1=".1" y1="0" x2=".9" y2="1">
+      <stop stop-color="#bff1ff"/><stop offset=".18" stop-color="#69c8ff"/><stop offset=".42" stop-color="#278dff"/><stop offset=".68" stop-color="#1e61f2"/><stop offset="1" stop-color="#152aa7"/>
+    </linearGradient>
+    <linearGradient id="facet" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#55baff" stop-opacity=".9"/><stop offset="1" stop-color="#0b2b9d" stop-opacity=".8"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#1d5bbc" stop-opacity="0"/><stop offset=".5" stop-color="#388fff" stop-opacity=".75"/><stop offset="1" stop-color="#1d5bbc" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="9" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="24"/></filter>
+  </defs>
+  <rect width="1200" height="600" fill="url(#bg)"/>
+  <ellipse cx="730" cy="325" rx="360" ry="210" fill="#0a42a6" opacity=".12" filter="url(#soft)"/>
+  <g opacity=".34" fill="#0a2347">
+    <polygon points="0,515 260,400 470,430 230,560"/>
+    <polygon points="200,100 500,175 760,95 1010,130 720,210 440,190"/>
+    <polygon points="600,450 910,355 1200,390 930,515 680,545"/>
+    <polygon points="785,0 1030,72 850,135 650,90"/>
+  </g>
+  <g opacity=".58" fill="none" stroke="url(#line)" stroke-width="3">
+    <path d="M20 535 L270 418 L505 468 L790 350 L1180 420"/>
+    <path d="M140 74 L420 177 L650 111 L925 174 L1170 92"/>
+    <path d="M315 595 L560 420 L820 525 L1120 365"/>
+  </g>
+  <g filter="url(#glow)">
+    <path d="M135 145 L650 38 L1090 102 L805 191 L520 178 L884 300 L718 393 L360 335 L88 428 L405 246 L132 207 Z" fill="url(#ribbon)" stroke="#79d3ff" stroke-opacity=".45" stroke-width="2"/>
+    <polygon points="135,145 650,38 805,191 520,178" fill="#7fd6ff" opacity=".42"/>
+    <polygon points="520,178 884,300 718,393 405,246" fill="url(#facet)" opacity=".72"/>
+    <polygon points="360,335 88,428 405,246 718,393" fill="#1760e8" opacity=".62"/>
+    <polygon points="805,191 1090,102 884,300 520,178" fill="#0d46c7" opacity=".58"/>
+    <path d="M185 162 L650 61" stroke="#e4fbff" stroke-width="7" stroke-linecap="round" opacity=".72"/>
+  </g>
+  <g stroke="#3b91ff" opacity=".48">
+    <line x1="800" y1="38" x2="800" y2="548"/><line x1="1010" y1="82" x2="1010" y2="510"/>
+  </g>
+</svg>
