@@ -17,4 +17,7 @@ Design-first production draft. Real metrics, client names, service pricing, case
 Static HTML/CSS/JS. Links are relative so the site works both as a GitHub Pages project site and later on a custom domain.
 
 ## Contact artwork
-`assets/images/contact-hero-s.png` is the approved futuristic blue ScaleOps graphic supplied for the Contact page.
+`assets/images/contact-hero-s.svg` is the approved futuristic blue ScaleOps graphic for the Contact page.
+
+## Automation
+`AGENTS.md` contains the operating guardrails for future Codex maintenance and automation. GitHub Actions validates the required page structure on every push.
