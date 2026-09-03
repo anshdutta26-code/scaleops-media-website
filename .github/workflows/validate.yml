@@ -9,7 +9,7 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Check required pages and assets
         run: |
           test -f index.html
@@ -19,9 +19,17 @@ jobs:
           test -f insights/index.html
           test -f contact/index.html
           test -f assets/css/styles.css
-          test -f assets/images/contact-hero-s.svg
-      - name: Detect placeholder production domain
+          test -f assets/js/main.js
+          test -f assets/images/contact-hero-s.png
+      - name: Confirm no obvious launch placeholders
         run: |
-          if grep -R "example.com" sitemap.xml; then
-            echo "Sitemap still uses placeholder domain. This is expected until the custom domain is selected."
-          fi
+          ! grep -R -n -E "YOUR DATA|YOUR %|YOUR X|example.com|To be added|Calendar placeholder" --include='*.html' .
+      - name: Confirm temporary preview is noindex
+        run: |
+          grep -q 'noindex,nofollow' index.html
+          grep -q 'noindex,nofollow' systems/index.html
+          grep -q 'noindex,nofollow' services/index.html
+          grep -q 'noindex,nofollow' case-studies/index.html
+          grep -q 'noindex,nofollow' insights/index.html
+          grep -q 'noindex,nofollow' contact/index.html
+          grep -q 'Disallow: /' robots.txt
