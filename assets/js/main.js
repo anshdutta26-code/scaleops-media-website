@@ -1,4 +1,30 @@
 (() => {
+  const script = document.currentScript;
+  if (script?.src) {
+    const brandCss = script.src.replace(/\/assets\/js\/main\.js(?:\?.*)?$/, '/assets/css/logo-fix.css?v=20260903-logo3');
+    if (!document.querySelector('link[data-scaleops-brand-fix]')) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = brandCss;
+      link.dataset.scaleopsBrandFix = 'true';
+      document.head.appendChild(link);
+    }
+
+    const brandMark = script.src.replace(/\/assets\/js\/main\.js(?:\?.*)?$/, '/assets/images/logo-mark.svg?v=20260903-logo3');
+    const style = document.createElement('style');
+    style.textContent = `
+      .hero-art.home::before,.contact-art::before{
+        content:"";position:absolute;z-index:2;pointer-events:none;
+        left:25%;right:25%;top:13%;bottom:24%;
+        background:url("${brandMark}") center/contain no-repeat;
+        filter:drop-shadow(0 0 24px rgba(47,128,237,.48));
+      }
+      .contact-art::before{left:30%;right:30%;top:15%;bottom:25%;}
+      @media(max-width:820px){.hero-art.home::before{left:22%;right:22%;top:12%;bottom:22%;}.contact-art::before{left:28%;right:28%;}}
+    `;
+    document.head.appendChild(style);
+  }
+
   const clean = (value) => value.replace(/index\.html$/, '').replace(/\/+$/, '') || '/';
   const current = clean(location.pathname);
   document.querySelectorAll('[data-nav]').forEach((link) => {
