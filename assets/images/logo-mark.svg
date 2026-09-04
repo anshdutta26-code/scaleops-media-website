@@ -1,23 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 668" role="img" aria-label="ScaleOps logo mark">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" role="img" aria-label="ScaleOps mark">
 <defs>
-  <linearGradient id="base" x1="12%" y1="8%" x2="88%" y2="92%"><stop offset="0" stop-color="#2F80ED"/><stop offset=".52" stop-color="#2856D4"/><stop offset="1" stop-color="#102E8F"/></linearGradient>
-  <linearGradient id="top" x1="0" y1="0" x2="1" y2=".9"><stop stop-color="#A7EEFF"/><stop offset=".22" stop-color="#69D8FF"/><stop offset=".58" stop-color="#2F80ED"/><stop offset="1" stop-color="#235BD9"/></linearGradient>
-  <linearGradient id="mid" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2C68F2"/><stop offset=".6" stop-color="#2449C6"/><stop offset="1" stop-color="#183597"/></linearGradient>
-  <linearGradient id="bottom" x1=".1" y1=".1" x2=".9" y2=".9"><stop stop-color="#5EC8FF"/><stop offset=".35" stop-color="#2F80ED"/><stop offset="1" stop-color="#173C9D"/></linearGradient>
-  <clipPath id="clip"><path d="M 910 109 L 834 84 L 568 103 L 640 137 L 328 220 L 261 285 L 333 317 L 359 365 L 509 382 L 609 422 L 427 465 L 181 437 L 71 570 L 705 496 L 818 381 L 434 256 L 731 200 L 774 176 L 843 200 L 848 138 Z"/></clipPath>
-  <filter id="glow" x="-25%" y="-25%" width="150%" height="150%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#72dcff"/><stop offset=".18" stop-color="#4ba8ff"/><stop offset=".48" stop-color="#2f80ed"/><stop offset=".78" stop-color="#1b55d7"/><stop offset="1" stop-color="#143897"/></linearGradient>
+ <linearGradient id="shine" x1="0" y1="0" x2=".9" y2="1"><stop offset="0" stop-color="#c8f5ff" stop-opacity=".9"/><stop offset=".35" stop-color="#66c8ff" stop-opacity=".28"/><stop offset="1" stop-color="#1b55d7" stop-opacity="0"/></linearGradient>
+ <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <clipPath id="clip"><polygon points="999.4,34.6 883.7,0.0 740.5,30.2 580.4,28.9 665.1,72.9 300.4,177.3 223.3,257.2 288.7,291.1 295.7,332.0 277.0,357.8 344.2,392.4 428.4,396.1 437.2,418.8 327.9,438.9 308.0,473.5 126.8,449.6 0.6,617.5 742.8,525.1 875.5,379.2 506.1,255.9 455.9,218.2 774.4,152.2 822.3,123.9 904.7,152.8 908.8,84.9"/></clipPath>
 </defs>
-<g filter="url(#glow)">
- <path d="M 910 109 L 834 84 L 568 103 L 640 137 L 328 220 L 261 285 L 333 317 L 359 365 L 509 382 L 609 422 L 427 465 L 181 437 L 71 570 L 705 496 L 818 381 L 434 256 L 731 200 L 774 176 L 843 200 L 848 138 Z" fill="url(#base)" stroke="#71D9FF" stroke-width="2"/>
- <g clip-path="url(#clip)">
-   <polygon points="261,285 328,220 568,103 834,84 910,109 848,138 774,176 731,200 434,256" fill="url(#top)"/>
-   <polygon points="261,285 434,256 818,381 705,496 609,422 509,382 359,365 333,317" fill="url(#mid)"/>
-   <polygon points="71,570 181,437 427,465 609,422 705,496 380,535" fill="url(#bottom)"/>
-   <polygon points="568,103 834,84 705,126 640,137" fill="#D3F6FF" opacity=".22"/>
-   <polygon points="434,256 818,381 742,374 548,315" fill="#6CA8FF" opacity=".18"/>
-   <polygon points="181,437 427,465 318,485 119,555" fill="#83DEFF" opacity=".16"/>
- </g>
- <path d="M 473 421 L 468 412 L 457 411 L 348 436 L 338 445 L 346 454 L 362 453 Z" fill="#62CCFF" opacity=".95"/><path d="M 725 247 L 710 240 L 621 259 L 604 270 L 629 272 Z" fill="#62CCFF" opacity=".95"/>
- <circle cx="835" cy="101" r="7" fill="#F3FDFF" opacity=".95"/>
-</g>
+<g filter="url(#glow)"><polygon points="999.4,34.6 883.7,0.0 740.5,30.2 580.4,28.9 665.1,72.9 300.4,177.3 223.3,257.2 288.7,291.1 295.7,332.0 277.0,357.8 344.2,392.4 428.4,396.1 437.2,418.8 327.9,438.9 308.0,473.5 126.8,449.6 0.6,617.5 742.8,525.1 875.5,379.2 506.1,255.9 455.9,218.2 774.4,152.2 822.3,123.9 904.7,152.8 908.8,84.9" fill="url(#brand)" stroke="#6fd8ff" stroke-width="2"/>
+<g clip-path="url(#clip)"><path d="M160 155 L865 15 L740 170 L210 282 Z" fill="url(#shine)" opacity=".72"/><path d="M135 335 L760 214 L590 365 L255 448 Z" fill="#173eb4" opacity=".55"/><path d="M40 575 L390 410 L738 360 L610 520 L80 618 Z" fill="#0f2e8c" opacity=".72"/><path d="M35 570 L270 450 L120 520 Z" fill="#70ddff" opacity=".7"/><path d="M410 185 L580 142 L505 196 L425 220 Z" fill="#d8f7ff" opacity=".74"/></g></g>
 </svg>
