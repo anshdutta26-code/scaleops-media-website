@@ -17,14 +17,22 @@ jobs:
           test -f contact/index.html
           test -f thanks/index.html
           test -f assets/images/logo-mark.svg
+          test -f assets/images/logo-lockup.svg
           test -f assets/css/approved-immersive-3d.css
           test -f assets/css/orbit-final.css
           test -f assets/css/experience-v2.css
           test -f assets/js/approved-immersive-3d.js
+      - name: Check brand assets are self contained
+        run: |
+          set -e
+          grep -q '<svg' assets/images/logo-mark.svg
+          grep -q '<path' assets/images/logo-mark.svg
+          grep -q '<svg' assets/images/logo-lockup.svg
+          ! grep -q 'data:image/' assets/images/logo-mark.svg
+          ! grep -q 'data:image/' assets/images/logo-lockup.svg
       - name: Check immersive design contract
         run: |
           set -e
-          grep -q 'experience-v2.css' index.html
           grep -q 'data-scene="logo"' index.html
           grep -q 'data-scene="rupee"' index.html
           grep -q 'data-scene="hub"' index.html
@@ -33,7 +41,11 @@ jobs:
           grep -q 'data-scene="insights"' index.html
           grep -q 'data-scene="return"' index.html
           grep -q 'data-scene="final"' index.html
-          ! grep -q 'final-overrides.css' assets/js/approved-immersive-3d.js
+          grep -q 'stage-fx' assets/js/approved-immersive-3d.js
+          grep -q 'transition' assets/js/approved-immersive-3d.js
+          grep -q 'process' assets/js/approved-immersive-3d.js
+          grep -q 'Protected three-column composition' assets/css/orbit-final.css
+          ! grep -q -- '--stage-w' assets/css/experience-v2.css
       - name: Check lead booking contract
         run: |
           set -e
@@ -45,7 +57,9 @@ jobs:
           grep -q 'value="4 PM"' contact/index.html
           grep -q 'value="Flexible"' contact/index.html
       - name: Check JavaScript syntax
-        run: node --check assets/js/approved-immersive-3d.js
+        run: |
+          node --check assets/js/approved-immersive-3d.js
+          node --check assets/js/contact-immersive.js
       - name: Check obvious placeholders
         run: |
           ! grep -R -n -E "YOUR DATA|YOUR %|YOUR X|example.com|To be added|Calendar placeholder" --include='*.html' .
