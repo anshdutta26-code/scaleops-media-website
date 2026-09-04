@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: Check required pages and assets
+      - name: Check required pages and final 3D assets
         run: |
           test -f index.html
           test -f systems/index.html
@@ -18,18 +18,32 @@ jobs:
           test -f case-studies/index.html
           test -f insights/index.html
           test -f contact/index.html
-          test -f assets/css/styles.css
-          test -f assets/js/main.js
-          test -f assets/images/contact-hero-s.png
+          test -f thanks/index.html
+          test -f assets/css/final-3d-1.css
+          test -f assets/css/final-3d-2.css
+          test -f assets/css/final-3d-3.css
+          test -f assets/css/final-3d-4.css
+          test -f assets/js/final-3d.js
+          test -f assets/images/logo-lockup.svg
+          test -f assets/images/logo-mark.svg
+      - name: Confirm final immersive journey is present
+        run: |
+          grep -q 'data-stage="logo"' index.html
+          grep -q 'data-stage="orbit"' index.html
+          grep -q 'data-stage="rupee"' index.html
+          grep -q 'data-stage="rupee-hub"' index.html
+          grep -q 'data-stage="return"' index.html
+          grep -q 'data-stage="final-logo"' index.html
+          grep -q 'ORBIT → TRANSFORM → SCALE → REPEAT' index.html
+      - name: Confirm booking workflow is preserved
+        run: |
+          grep -q 'New ScaleOps Media Website Lead' contact/index.html
+          grep -q 'value="12 PM"' contact/index.html
+          grep -q 'value="1 PM"' contact/index.html
+          grep -q 'value="2 PM"' contact/index.html
+          grep -q 'value="3 PM"' contact/index.html
+          grep -q 'value="4 PM"' contact/index.html
+          grep -q 'value="Flexible"' contact/index.html
       - name: Confirm no obvious launch placeholders
         run: |
           ! grep -R -n -E "YOUR DATA|YOUR %|YOUR X|example.com|To be added|Calendar placeholder" --include='*.html' .
-      - name: Confirm temporary preview is noindex
-        run: |
-          grep -q 'noindex,nofollow' index.html
-          grep -q 'noindex,nofollow' systems/index.html
-          grep -q 'noindex,nofollow' services/index.html
-          grep -q 'noindex,nofollow' case-studies/index.html
-          grep -q 'noindex,nofollow' insights/index.html
-          grep -q 'noindex,nofollow' contact/index.html
-          grep -q 'Disallow: /' robots.txt
