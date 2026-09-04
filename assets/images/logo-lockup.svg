@@ -1,1 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 150" role="img" aria-labelledby="title desc"><title id="title">ScaleOps Media</title><desc id="desc">ScaleOps Media horizontal brand lockup.</desc><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#75ddff"/><stop offset=".3" stop-color="#42b8ff"/><stop offset=".63" stop-color="#2f80ed"/><stop offset="1" stop-color="#173d9f"/></linearGradient><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#55c8ff"/><stop offset=".5" stop-color="#2b7bf3"/><stop offset="1" stop-color="#2038a4"/></linearGradient><filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g transform="translate(5 9) scale(.30)" filter="url(#glow)"><path d="M165 92 494 28l54 33-246 50 115 63-232 46-67-40 161-35-132-66z" fill="url(#g1)" stroke="#8ce7ff" stroke-width="2"/><path d="M417 174 185 220l104 59-173 37-49-30 271-60-104-57z" fill="url(#g2)" stroke="#4fb7ff" stroke-width="2"/><path d="M116 316l173-37 92 50-297 63-53-32 53-59z" fill="url(#g1)" stroke="#61cfff" stroke-width="2"/><path d="M494 28l61-10-8 55z" fill="#4eb7ff"/></g><g font-family="Inter,Arial,Helvetica,sans-serif" fill="#f8fafc"><text x="185" y="77" font-size="44" font-weight="600" letter-spacing="7">SCALEOPS</text><text x="255" y="113" font-size="18" font-weight="500" letter-spacing="12">Media</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 72" role="img" aria-label="ScaleOps Media">
+<defs>
+  <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9FE8FF"/><stop offset=".28" stop-color="#2F80ED"/><stop offset=".68" stop-color="#2856D4"/><stop offset="1" stop-color="#14379B"/></linearGradient>
+  <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#5EC8FF"/><stop offset=".45" stop-color="#2F80ED"/><stop offset="1" stop-color="#173C9D"/></linearGradient>
+  <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="1.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<g transform="translate(0,5) scale(.085)" filter="url(#glow)">
+ <path d="M 910 109 L 834 84 L 568 103 L 640 137 L 328 220 L 261 285 L 333 317 L 359 365 L 509 382 L 609 422 L 427 465 L 181 437 L 71 570 L 705 496 L 818 381 L 434 256 L 731 200 L 774 176 L 843 200 L 848 138 Z" fill="url(#g1)" stroke="#71D9FF" stroke-width="3"/>
+ <polygon points="261,285 434,256 818,381 705,496 609,422 509,382 359,365 333,317" fill="#2851CF" opacity=".86"/>
+ <polygon points="71,570 181,437 427,465 609,422 705,496 380,535" fill="url(#g2)"/>
+ <path d="M 473 421 L 468 412 L 457 411 L 348 436 L 338 445 L 346 454 L 362 453 Z" fill="#62CCFF"/><path d="M 725 247 L 710 240 L 621 259 L 604 270 L 629 272 Z" fill="#62CCFF"/>
+</g>
+<text x="84" y="41" fill="#F8FAFC" font-family="Inter,Arial,sans-serif" font-size="26" font-weight="600" letter-spacing="2.2">SCALEOPS</text>
+<text x="244" y="41" fill="#F8FAFC" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="500" letter-spacing="2.7">Media</text>
+</svg>
