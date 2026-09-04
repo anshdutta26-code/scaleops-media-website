@@ -1,22 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440" role="img" aria-labelledby="title desc">
-<title id="title">ScaleOps logo mark</title><desc id="desc">Blue faceted ScaleOps S mark from the brand system.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 668" role="img" aria-label="ScaleOps logo mark">
 <defs>
-  <linearGradient id="gTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#75ddff"/><stop offset=".24" stop-color="#42b8ff"/><stop offset=".58" stop-color="#2f80ed"/><stop offset="1" stop-color="#173d9f"/></linearGradient>
-  <linearGradient id="gMid" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#55c8ff"/><stop offset=".48" stop-color="#2b7bf3"/><stop offset="1" stop-color="#2038a4"/></linearGradient>
-  <linearGradient id="gLow" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2bb7ff"/><stop offset=".45" stop-color="#1c6ff0"/><stop offset="1" stop-color="#162d80"/></linearGradient>
-  <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#dff8ff" stop-opacity=".95"/><stop offset=".42" stop-color="#8ce4ff" stop-opacity=".7"/><stop offset="1" stop-color="#4cb5ff" stop-opacity="0"/></linearGradient>
-  <filter id="glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="10" result="b"/><feColorMatrix in="b" values="0 0 0 0 0.12 0 0 0 0 0.46 0 0 0 0 1 0 0 0 1 0"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-  <filter id="star" x="-300%" y="-300%" width="600%" height="600%"><feGaussianBlur stdDeviation="7"/></filter>
+  <linearGradient id="base" x1="12%" y1="8%" x2="88%" y2="92%"><stop offset="0" stop-color="#2F80ED"/><stop offset=".52" stop-color="#2856D4"/><stop offset="1" stop-color="#102E8F"/></linearGradient>
+  <linearGradient id="top" x1="0" y1="0" x2="1" y2=".9"><stop stop-color="#A7EEFF"/><stop offset=".22" stop-color="#69D8FF"/><stop offset=".58" stop-color="#2F80ED"/><stop offset="1" stop-color="#235BD9"/></linearGradient>
+  <linearGradient id="mid" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2C68F2"/><stop offset=".6" stop-color="#2449C6"/><stop offset="1" stop-color="#183597"/></linearGradient>
+  <linearGradient id="bottom" x1=".1" y1=".1" x2=".9" y2=".9"><stop stop-color="#5EC8FF"/><stop offset=".35" stop-color="#2F80ED"/><stop offset="1" stop-color="#173C9D"/></linearGradient>
+  <clipPath id="clip"><path d="M 910 109 L 834 84 L 568 103 L 640 137 L 328 220 L 261 285 L 333 317 L 359 365 L 509 382 L 609 422 L 427 465 L 181 437 L 71 570 L 705 496 L 818 381 L 434 256 L 731 200 L 774 176 L 843 200 L 848 138 Z"/></clipPath>
+  <filter id="glow" x="-25%" y="-25%" width="150%" height="150%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 </defs>
 <g filter="url(#glow)">
-  <path d="M165 92 494 28 548 61 302 111 417 174 185 220 118 180 279 145 147 79Z" fill="url(#gTop)" stroke="#8ce7ff" stroke-width="2"/>
-  <path d="M417 174 185 220 289 279 116 316 67 286 338 226 234 169Z" fill="url(#gMid)" stroke="#4fb7ff" stroke-width="2"/>
-  <path d="M116 316 289 279 381 329 84 392 31 360 84 301Z" fill="url(#gLow)" stroke="#61cfff" stroke-width="2"/>
-  <path d="M494 28 555 18 547 73 494 28Z" fill="#4eb7ff"/>
-  <path d="M164 93 458 38 331 83 222 105Z" fill="url(#shine)" opacity=".9"/>
-  <path d="M116 316 241 290 145 326 72 343Z" fill="#8be9ff" opacity=".75"/>
-  <path d="M261 178 334 161 297 181 250 190Z" fill="#70dcff" opacity=".8"/>
-  <path d="M230 276 293 262 259 282 217 289Z" fill="#7ae3ff" opacity=".7"/>
+ <path d="M 910 109 L 834 84 L 568 103 L 640 137 L 328 220 L 261 285 L 333 317 L 359 365 L 509 382 L 609 422 L 427 465 L 181 437 L 71 570 L 705 496 L 818 381 L 434 256 L 731 200 L 774 176 L 843 200 L 848 138 Z" fill="url(#base)" stroke="#71D9FF" stroke-width="2"/>
+ <g clip-path="url(#clip)">
+   <polygon points="261,285 328,220 568,103 834,84 910,109 848,138 774,176 731,200 434,256" fill="url(#top)"/>
+   <polygon points="261,285 434,256 818,381 705,496 609,422 509,382 359,365 333,317" fill="url(#mid)"/>
+   <polygon points="71,570 181,437 427,465 609,422 705,496 380,535" fill="url(#bottom)"/>
+   <polygon points="568,103 834,84 705,126 640,137" fill="#D3F6FF" opacity=".22"/>
+   <polygon points="434,256 818,381 742,374 548,315" fill="#6CA8FF" opacity=".18"/>
+   <polygon points="181,437 427,465 318,485 119,555" fill="#83DEFF" opacity=".16"/>
+ </g>
+ <path d="M 473 421 L 468 412 L 457 411 L 348 436 L 338 445 L 346 454 L 362 453 Z" fill="#62CCFF" opacity=".95"/><path d="M 725 247 L 710 240 L 621 259 L 604 270 L 629 272 Z" fill="#62CCFF" opacity=".95"/>
+ <circle cx="835" cy="101" r="7" fill="#F3FDFF" opacity=".95"/>
 </g>
-<g opacity=".9"><ellipse cx="514" cy="45" rx="9" ry="38" fill="#58c9ff" filter="url(#star)"/><ellipse cx="514" cy="45" rx="34" ry="5" fill="#8de8ff" filter="url(#star)"/><circle cx="514" cy="45" r="5" fill="#e9fbff"/></g>
 </svg>
