@@ -2,6 +2,12 @@
   const scriptEl=document.currentScript;
   const assetRoot=scriptEl?new URL('../',scriptEl.src):new URL('assets/',location.href);
   const image=name=>new URL('images/'+name,assetRoot).href;
+  const assetVersion='final-20260904-1421';
+  const mark=image('logo-mark.svg')+'?v='+assetVersion;
+  const lockup=image('logo-lockup.svg')+'?v='+assetVersion;
+  const icon=document.querySelector('link[rel~="icon"]'); if(icon) icon.href=mark;
+  document.querySelectorAll('.core-logo,footer .footer-brand img').forEach(img=>img.src=mark);
+  const headerLogo=document.querySelector('.top .brand img'); if(headerLogo){headerLogo.src=lockup;headerLogo.alt='ScaleOps Media'}
 
   const services=document.querySelector('#services'); if(services) services.dataset.scene='services';
   const insights=document.querySelector('#insights'); if(insights) insights.dataset.scene='insights';
