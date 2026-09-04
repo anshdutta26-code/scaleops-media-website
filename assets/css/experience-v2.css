@@ -1,2 +1,4 @@
-/* Production compatibility entrypoint — v3 is the final immersive experience. */
+/* Production compatibility entrypoint — final immersive experience. */
 @import url("experience-v3.css?v=20260904-v3");
+@import url("immersive-final-v4.css?v=20260904-final");
+@import url("funnel-platform.css?v=20260904-final");
