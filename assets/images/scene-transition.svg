@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<defs>
+  <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#69D8FF" stop-opacity="0"/><stop offset=".42" stop-color="#69D8FF" stop-opacity=".95"/><stop offset="1" stop-color="#7657FF" stop-opacity="0"/></linearGradient>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8CE7FF"/><stop offset=".45" stop-color="#2F80ED"/><stop offset="1" stop-color="#7657FF"/></linearGradient>
+  <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<g filter="url(#glow)" opacity=".85">
+  <rect x="487" y="110" width="6" height="780" rx="3" fill="url(#beam)"/>
+  <path d="M430 225h140l-70 70z" fill="url(#g)" opacity=".75"/>
+  <path d="M438 325h124l-62 66z" fill="url(#g)" opacity=".62"/>
+  <path d="M447 420h106l-53 58z" fill="url(#g)" opacity=".5"/>
+</g>
+<g fill="none" stroke="url(#g)" filter="url(#glow)">
+  <ellipse cx="500" cy="690" rx="270" ry="82" stroke-width="3"/>
+  <ellipse cx="500" cy="690" rx="215" ry="61" stroke-width="2" opacity=".65"/>
+  <ellipse cx="500" cy="690" rx="155" ry="43" stroke-width="1.5" opacity=".45"/>
+</g>
+<g fill="#69D8FF" filter="url(#glow)"><circle cx="271" cy="312" r="5"/><circle cx="739" cy="395" r="6"/><circle cx="642" cy="226" r="4"/><circle cx="319" cy="597" r="4"/></g>
+</svg>
