@@ -1,1 +1,2 @@
-/* Legacy compatibility shim. Final production layout is controlled by approved-immersive-3d.css + orbit-final.css. Intentionally empty so obsolete typography and stage positioning cannot override the approved responsive experience. */
+/* Production compatibility entrypoint — v3 is the final immersive experience. */
+@import url("experience-v3.css?v=20260904-v3");
