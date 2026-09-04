@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<defs>
+  <linearGradient id="top" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1A56C8"/><stop offset=".55" stop-color="#2F80ED"/><stop offset="1" stop-color="#69D8FF"/></linearGradient>
+  <linearGradient id="side" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#081C42"/><stop offset="1" stop-color="#251364"/></linearGradient>
+  <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<g filter="url(#glow)" transform="translate(120 140)">
+  <g transform="translate(40 130)"><polygon points="0,82 150,0 300,82 150,164" fill="url(#top)" stroke="#74DDFF"/><polygon points="0,82 150,164 150,330 0,248" fill="#061633" stroke="#2464C2"/><polygon points="300,82 150,164 150,330 300,248" fill="url(#side)" stroke="#2F80ED"/></g>
+  <g transform="translate(330 30)"><polygon points="0,82 150,0 300,82 150,164" fill="url(#top)" stroke="#74DDFF"/><polygon points="0,82 150,164 150,330 0,248" fill="#061633" stroke="#2464C2"/><polygon points="300,82 150,164 150,330 300,248" fill="url(#side)" stroke="#7657FF"/></g>
+  <g transform="translate(470 360) scale(.78)"><polygon points="0,82 150,0 300,82 150,164" fill="url(#top)" stroke="#74DDFF"/><polygon points="0,82 150,164 150,330 0,248" fill="#061633" stroke="#2464C2"/><polygon points="300,82 150,164 150,330 300,248" fill="url(#side)" stroke="#2F80ED"/></g>
+  <g transform="translate(125 480) scale(.72)"><polygon points="0,82 150,0 300,82 150,164" fill="url(#top)" stroke="#74DDFF"/><polygon points="0,82 150,164 150,330 0,248" fill="#061633" stroke="#2464C2"/><polygon points="300,82 150,164 150,330 300,248" fill="url(#side)" stroke="#7657FF"/></g>
+</g>
+<g fill="none" stroke="#69D8FF" stroke-width="4" opacity=".9"><circle cx="315" cy="370" r="34"/><path d="M315 345v50M290 370h50"/><path d="M555 245l27 22-27 22-27-22z"/><path d="M650 585h70v45h-70zM665 600h40"/><path d="M340 700c30-55 60-55 90 0"/></g>
+</svg>
