@@ -1,1 +1,5 @@
-Approved by user on 2026-09-03. Production site rebuilt from the approved immersive 3D concept with the ScaleOps brand system, animated 3D ₹ scene, connected systems architecture, 3D service stack, proof/case studies, insights, contact booking form and preserved lead-routing subject.
+ScaleOps Media production build
+
+Logo hotfix: user-approved first-option primary ScaleOps mark restored as a valid production PNG at the exact 661:433 aspect used by the WebGL plane, header, favicon, fallback and footer.
+
+Immersive Three.js/WebGL V5 remains active with the corrected ₹ journey and preserved booking backend.
