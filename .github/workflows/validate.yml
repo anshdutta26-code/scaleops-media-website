@@ -10,57 +10,55 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: Check required production files
+      - name: Check production files
         run: |
           set -e
           test -f index.html
           test -f contact/index.html
           test -f thanks/index.html
+          test -f assets/images/scaleops-mark-exact.png
           test -f assets/images/logo-mark.svg
-          test -f assets/images/logo-lockup.svg
-          test -f assets/images/scene-orbit.svg
-          test -f assets/images/scene-transition.svg
-          test -f assets/images/scene-hub.svg
-          test -f assets/images/scene-services.svg
-          test -f assets/images/scene-proof.svg
-          test -f assets/images/scene-insights.svg
-          test -f assets/css/approved-immersive-3d.css
-          test -f assets/css/orbit-final.css
-          test -f assets/css/experience-v2.css
-          test -f assets/css/experience-v3.css
-          test -f assets/js/approved-immersive-3d.js
-      - name: Check brand assets are self contained
+          test -f assets/css/immersive-webgl.css
+          test -f assets/js/immersive-webgl.js
+          test -f assets/js/contact-immersive.js
+      - name: Check exact brandbook asset contract
         run: |
           set -e
-          grep -q '<svg' assets/images/logo-mark.svg
-          grep -q '<path' assets/images/logo-mark.svg
-          grep -q '<svg' assets/images/logo-lockup.svg
+          file assets/images/scaleops-mark-exact.png | grep -q 'PNG image data'
+          grep -q 'scaleops-mark-exact.png' assets/images/logo-mark.svg
+          grep -q 'scaleops-mark-exact.png' index.html
           ! grep -q 'data:image/' assets/images/logo-mark.svg
-          ! grep -q 'data:image/' assets/images/logo-lockup.svg
-      - name: Check immersive design contract
+      - name: Check real WebGL immersive contract
         run: |
           set -e
+          grep -q '<canvas id="webgl"' index.html
+          grep -q 'type="module" src="assets/js/immersive-webgl.js' index.html
+          grep -q 'three@0.180.0' assets/js/immersive-webgl.js
+          grep -q 'WebGLRenderer' assets/js/immersive-webgl.js
+          grep -q 'CylinderGeometry' assets/js/immersive-webgl.js
+          grep -q 'createFunnelSegment' assets/js/immersive-webgl.js
+          grep -q 'makeRupee' assets/js/immersive-webgl.js
           grep -q 'data-scene="logo"' index.html
+          grep -q 'data-scene="orbit"' index.html
           grep -q 'data-scene="rupee"' index.html
-          grep -q 'data-scene="hub"' index.html
+          grep -q 'data-scene="funnel"' index.html
+          grep -q 'data-scene="systems"' index.html
           grep -q 'data-scene="services"' index.html
           grep -q 'data-scene="proof"' index.html
           grep -q 'data-scene="insights"' index.html
           grep -q 'data-scene="return"' index.html
           grep -q 'data-scene="final"' index.html
-          grep -q 'scene-art-layer' assets/js/approved-immersive-3d.js
-          grep -q 'scene-orbit.svg' assets/js/approved-immersive-3d.js
-          grep -q 'scene-transition.svg' assets/js/approved-immersive-3d.js
-          grep -q 'scene-hub.svg' assets/js/approved-immersive-3d.js
-          grep -q 'scene-services.svg' assets/js/approved-immersive-3d.js
-          grep -q 'scene-proof.svg' assets/js/approved-immersive-3d.js
-          grep -q 'scene-insights.svg' assets/js/approved-immersive-3d.js
-          grep -q 'experience-v3.css' assets/css/experience-v2.css
-          grep -q 'Central protected visual lane' assets/css/experience-v3.css
-          grep -q 'State choreography' assets/css/experience-v3.css
-      - name: Check lead booking contract
+      - name: Check responsive contract
         run: |
           set -e
+          grep -q '@media (max-width:900px)' assets/css/immersive-webgl.css
+          grep -q '@media (max-width:600px)' assets/css/immersive-webgl.css
+          grep -q 'svh' assets/css/immersive-webgl.css
+          grep -q 'devicePixelRatio' assets/js/immersive-webgl.js
+      - name: Check booking backend contract
+        run: |
+          set -e
+          grep -q 'https://formsubmit.co/anshdutta26@gmail.com' contact/index.html
           grep -q 'New ScaleOps Media Website Lead' contact/index.html
           grep -q 'value="12 PM"' contact/index.html
           grep -q 'value="1 PM"' contact/index.html
@@ -70,7 +68,7 @@ jobs:
           grep -q 'value="Flexible"' contact/index.html
       - name: Check JavaScript syntax
         run: |
-          node --check assets/js/approved-immersive-3d.js
+          node --check assets/js/immersive-webgl.js
           node --check assets/js/contact-immersive.js
       - name: Check obvious placeholders
         run: |
