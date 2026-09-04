@@ -1,5 +1,6 @@
 (()=>{
-  const addStyles=()=>{if(document.querySelector('link[data-final-overrides]'))return;const l=document.createElement('link');l.rel='stylesheet';l.href='assets/css/final-overrides.css?v=final3d-2';l.dataset.finalOverrides='1';document.head.appendChild(l)};addStyles();
+  const scriptEl=document.currentScript;const assetRoot=scriptEl?new URL('../',scriptEl.src):new URL('assets/',location.href);const cssHref=new URL('css/final-overrides.css?v=final3d-3',assetRoot).href;const image=(name)=>new URL('images/'+name,assetRoot).href;
+  const addStyles=()=>{if(document.querySelector('link[data-final-overrides]'))return;const l=document.createElement('link');l.rel='stylesheet';l.href=cssHref;l.dataset.finalOverrides='1';document.head.appendChild(l)};addStyles();
   const scenes=[...document.querySelectorAll('[data-scene]')];
   const services=document.querySelector('#services');if(services)services.dataset.scene='services';
   const insights=document.querySelector('#insights');if(insights)insights.dataset.scene='insights';
@@ -17,10 +18,10 @@
     orbit:'<span class="fx-planet fp1">Acquire</span><span class="fx-planet fp2">Convert</span><span class="fx-planet fp3">Retain</span><span class="fx-planet fp4">Operate</span><span class="fx-planet fp5">Scale</span>',
     rupee:'<span class="fx-beam fb1"></span><span class="fx-beam fb2"></span><span class="fx-beam fb3"></span><span class="fx-chip fv1">Offer</span><span class="fx-chip fv2">Follow-up</span><span class="fx-chip fv3">Revenue</span>',
     hub:'<span class="fx-node fn1">Acquisition</span><span class="fx-node fn2">Conversion</span><span class="fx-node fn3">Lifecycle</span><span class="fx-node fn4">Automation</span><span class="fx-node fn5">Analytics</span><span class="fx-node fn6">Growth Ops</span>',
-    services:'<img class="fx-graphic services-graphic" src="assets/images/services-stack.svg" alt=""><span class="fx-card fsc1">Paid</span><span class="fx-card fsc2">CRO</span><span class="fx-card fsc3">CRM</span><span class="fx-card fsc4">Content</span>',
-    proof:'<img class="fx-graphic proof-graphic" src="assets/images/dashboard-graph.svg" alt=""><span class="fx-bar fbar1"></span><span class="fx-bar fbar2"></span><span class="fx-bar fbar3"></span><span class="fx-bar fbar4"></span><span class="fx-chip fpc1">₹2L → ₹8L</span><span class="fx-chip fpc2">+165.9%</span>',
-    cases:'<img class="fx-graphic cases-graphic" src="assets/images/case-network.svg" alt=""><span class="fx-cube fc1"></span><span class="fx-cube fc2"></span><span class="fx-cube fc3"></span>',
-    insights:'<img class="fx-graphic insights-graphic" src="assets/images/insights-servers.svg" alt=""><span class="fx-card fic1">Offer ≠ Funnel</span><span class="fx-card fic2">CAC is systemic</span><span class="fx-card fic3">Automate ownership</span>',
+    services:`<img class="fx-graphic services-graphic" src="${image('services-stack.svg')}" alt=""><span class="fx-card fsc1">Paid</span><span class="fx-card fsc2">CRO</span><span class="fx-card fsc3">CRM</span><span class="fx-card fsc4">Content</span>`,
+    proof:`<img class="fx-graphic proof-graphic" src="${image('dashboard-graph.svg')}" alt=""><span class="fx-bar fbar1"></span><span class="fx-bar fbar2"></span><span class="fx-bar fbar3"></span><span class="fx-bar fbar4"></span><span class="fx-chip fpc1">₹2L → ₹8L</span><span class="fx-chip fpc2">+165.9%</span>`,
+    cases:`<img class="fx-graphic cases-graphic" src="${image('case-network.svg')}" alt=""><span class="fx-cube fc1"></span><span class="fx-cube fc2"></span><span class="fx-cube fc3"></span>`,
+    insights:`<img class="fx-graphic insights-graphic" src="${image('insights-servers.svg')}" alt=""><span class="fx-card fic1">Offer ≠ Funnel</span><span class="fx-card fic2">CAC is systemic</span><span class="fx-card fic3">Automate ownership</span>`,
     return:'<span class="return-arc"></span><span class="return-arc alt"></span><span class="fx-cube fc1"></span><span class="fx-cube fc2"></span>',
     final:'<span class="fx-final-halo"></span>'
   };
