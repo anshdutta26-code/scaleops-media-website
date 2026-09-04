@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: Check required pages and final 3D assets
+      - name: Check required pages and approved 3D assets
         run: |
           test -f index.html
           test -f systems/index.html
@@ -19,22 +19,21 @@ jobs:
           test -f insights/index.html
           test -f contact/index.html
           test -f thanks/index.html
-          test -f assets/css/final-3d-1.css
-          test -f assets/css/final-3d-2.css
-          test -f assets/css/final-3d-3.css
-          test -f assets/css/final-3d-4.css
-          test -f assets/js/final-3d.js
+          test -f assets/css/approved-immersive-3d.css
+          test -f assets/js/approved-immersive-3d.js
           test -f assets/images/logo-lockup.svg
           test -f assets/images/logo-mark.svg
-      - name: Confirm final immersive journey is present
+      - name: Confirm approved immersive journey is present
         run: |
-          grep -q 'data-stage="logo"' index.html
-          grep -q 'data-stage="orbit"' index.html
-          grep -q 'data-stage="rupee"' index.html
-          grep -q 'data-stage="rupee-hub"' index.html
-          grep -q 'data-stage="return"' index.html
-          grep -q 'data-stage="final-logo"' index.html
-          grep -q 'ORBIT → TRANSFORM → SCALE → REPEAT' index.html
+          grep -q 'Every Orbit' index.html
+          grep -q 'Logo → ₹ transition' index.html
+          grep -q '₹ systems hub' index.html
+          grep -q 'Premium Services' index.html
+          grep -q 'Real Systems' index.html
+          grep -q 'Final transition' index.html
+          grep -q 'Build. Scale. Dominate.' index.html
+          grep -q 'approved-immersive-3d.css' index.html
+          grep -q 'approved-immersive-3d.js' index.html
       - name: Confirm booking workflow is preserved
         run: |
           grep -q 'New ScaleOps Media Website Lead' contact/index.html
