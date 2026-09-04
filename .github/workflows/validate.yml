@@ -18,9 +18,16 @@ jobs:
           test -f thanks/index.html
           test -f assets/images/logo-mark.svg
           test -f assets/images/logo-lockup.svg
+          test -f assets/images/scene-orbit.svg
+          test -f assets/images/scene-transition.svg
+          test -f assets/images/scene-hub.svg
+          test -f assets/images/scene-services.svg
+          test -f assets/images/scene-proof.svg
+          test -f assets/images/scene-insights.svg
           test -f assets/css/approved-immersive-3d.css
           test -f assets/css/orbit-final.css
           test -f assets/css/experience-v2.css
+          test -f assets/css/experience-v3.css
           test -f assets/js/approved-immersive-3d.js
       - name: Check brand assets are self contained
         run: |
@@ -41,11 +48,16 @@ jobs:
           grep -q 'data-scene="insights"' index.html
           grep -q 'data-scene="return"' index.html
           grep -q 'data-scene="final"' index.html
-          grep -q 'stage-fx' assets/js/approved-immersive-3d.js
-          grep -q 'transition' assets/js/approved-immersive-3d.js
-          grep -q 'process' assets/js/approved-immersive-3d.js
-          grep -q 'Protected three-column composition' assets/css/orbit-final.css
-          ! grep -q -- '--stage-w' assets/css/experience-v2.css
+          grep -q 'scene-art-layer' assets/js/approved-immersive-3d.js
+          grep -q 'scene-orbit.svg' assets/js/approved-immersive-3d.js
+          grep -q 'scene-transition.svg' assets/js/approved-immersive-3d.js
+          grep -q 'scene-hub.svg' assets/js/approved-immersive-3d.js
+          grep -q 'scene-services.svg' assets/js/approved-immersive-3d.js
+          grep -q 'scene-proof.svg' assets/js/approved-immersive-3d.js
+          grep -q 'scene-insights.svg' assets/js/approved-immersive-3d.js
+          grep -q 'experience-v3.css' assets/css/experience-v2.css
+          grep -q 'Central protected visual lane' assets/css/experience-v3.css
+          grep -q 'State choreography' assets/css/experience-v3.css
       - name: Check lead booking contract
         run: |
           set -e
