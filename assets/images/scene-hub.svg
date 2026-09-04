@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#82E2FF"/><stop offset=".45" stop-color="#2F80ED"/><stop offset="1" stop-color="#7657FF"/></linearGradient>
+  <radialGradient id="h"><stop stop-color="#2F80ED" stop-opacity=".32"/><stop offset="1" stop-color="#02050B" stop-opacity="0"/></radialGradient>
+  <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<circle cx="500" cy="500" r="350" fill="url(#h)"/>
+<g stroke="#2F80ED" stroke-width="2" opacity=".72" fill="none" filter="url(#glow)">
+  <path d="M500 500L500 215M500 500L745 350M500 500L760 645M500 500L500 790M500 500L250 650M500 500L240 350"/>
+  <circle cx="500" cy="500" r="255" opacity=".28"/>
+</g>
+<g filter="url(#glow)">
+  <g transform="translate(450 160)"><path d="M50 0 98 28 98 83 50 112 2 83 2 28Z" fill="#061734" stroke="#69D8FF" stroke-width="2"/><circle cx="50" cy="55" r="19" fill="none" stroke="url(#g)" stroke-width="5"/><path d="M50 36v38M31 55h38" stroke="#69D8FF" stroke-width="3"/></g>
+  <g transform="translate(695 295)"><path d="M50 0 98 28 98 83 50 112 2 83 2 28Z" fill="#071634" stroke="#2F80ED" stroke-width="2"/><path d="M30 67h40M38 51h24M44 36h12" stroke="url(#g)" stroke-width="5" stroke-linecap="round"/></g>
+  <g transform="translate(710 590)"><path d="M50 0 98 28 98 83 50 112 2 83 2 28Z" fill="#091434" stroke="#7657FF" stroke-width="2"/><circle cx="50" cy="55" r="20" fill="none" stroke="url(#g)" stroke-width="4"/><path d="M50 35v40M30 55h40" stroke="#7657FF" stroke-width="3"/></g>
+  <g transform="translate(450 735)"><path d="M50 0 98 28 98 83 50 112 2 83 2 28Z" fill="#061734" stroke="#69D8FF" stroke-width="2"/><path d="M31 70c16-42 24-42 38 0M30 43h40" fill="none" stroke="url(#g)" stroke-width="4"/></g>
+  <g transform="translate(195 595)"><path d="M50 0 98 28 98 83 50 112 2 83 2 28Z" fill="#071634" stroke="#2F80ED" stroke-width="2"/><path d="M28 67 42 51 54 58 72 37" fill="none" stroke="url(#g)" stroke-width="5"/><circle cx="72" cy="37" r="5" fill="#69D8FF"/></g>
+  <g transform="translate(185 295)"><path d="M50 0 98 28 98 83 50 112 2 83 2 28Z" fill="#091434" stroke="#7657FF" stroke-width="2"/><path d="M29 67h42V43H29zM38 52h24" fill="none" stroke="url(#g)" stroke-width="4"/></g>
+</g>
+</svg>
