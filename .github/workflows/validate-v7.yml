@@ -24,9 +24,11 @@ jobs:
       - name: Check exact logo delivery
         run: |
           set -e
-          grep -q 'assets/scaleops-mark.png' v7-preview/index.html
-          grep -q "assets/scaleops-mark.png?v=v7-2" v7-preview/app-v7.js
+          grep -q 'assets/scaleops-mark.png?v=v7-logo4' v7-preview/index.html
+          grep -q "assets/scaleops-mark.png?v=v7-logo4" v7-preview/app-v7.js
           grep -q 'id="logo-overlay"' v7-preview/index.html
+          grep -q 'depthTest:false' v7-preview/app-v7.js
+          grep -q 'depthWrite:false' v7-preview/app-v7.js
           ! grep -q 'scaleops-mark-brandbook.svg' v7-preview/index.html
           ! grep -q 'scaleops-mark-exact.png' v7-preview/app-v7.js
       - name: Check cinematic V7 contract
