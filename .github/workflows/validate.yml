@@ -17,23 +17,27 @@ jobs:
           test -f contact/index.html
           test -f thanks/index.html
           test -f assets/images/scaleops-mark-exact.png
+          test -f assets/images/scaleops-mark-brandbook.svg
           test -f assets/images/logo-mark.svg
           test -f assets/css/immersive-webgl.css
           test -f assets/js/immersive-webgl.js
+          test -f assets/js/immersive-webgl-brandbook.js
           test -f assets/js/contact-immersive.js
       - name: Check exact brandbook asset contract
         run: |
           set -e
           file assets/images/scaleops-mark-exact.png | grep -q 'PNG image data'
-          grep -q 'scaleops-mark-exact.png' assets/images/logo-mark.svg
-          grep -q 'scaleops-mark-exact.png' index.html
-          ! grep -q 'data:image/' assets/images/logo-mark.svg
+          grep -q 'viewBox="0 0 661 433"' assets/images/scaleops-mark-brandbook.svg
+          grep -q 'data:image/png;base64,' assets/images/scaleops-mark-brandbook.svg
+          grep -q 'scaleops-mark-brandbook.svg' index.html
+          grep -q 'scaleops-mark-brandbook.svg' assets/js/immersive-webgl-brandbook.js
       - name: Check real WebGL immersive contract
         run: |
           set -e
           grep -q '<canvas id="webgl"' index.html
-          grep -q 'type="module" src="assets/js/immersive-webgl.js' index.html
+          grep -q 'type="module" src="assets/js/immersive-webgl-brandbook.js' index.html
           grep -q 'three@0.180.0' assets/js/immersive-webgl.js
+          grep -q 'three@0.180.0' assets/js/immersive-webgl-brandbook.js
           grep -q 'WebGLRenderer' assets/js/immersive-webgl.js
           grep -q 'CylinderGeometry' assets/js/immersive-webgl.js
           grep -q 'createFunnelSegment' assets/js/immersive-webgl.js
@@ -69,6 +73,7 @@ jobs:
       - name: Check JavaScript syntax
         run: |
           node --check assets/js/immersive-webgl.js
+          node --check assets/js/immersive-webgl-brandbook.js
           node --check assets/js/contact-immersive.js
       - name: Check obvious placeholders
         run: |
