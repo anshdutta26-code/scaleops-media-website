@@ -16,32 +16,31 @@ jobs:
           test -f index.html
           test -f contact/index.html
           test -f thanks/index.html
-          test -f assets/images/scaleops-mark-exact.png
           test -f assets/images/scaleops-mark-brandbook.svg
-          test -f assets/images/logo-mark.svg
-          test -f assets/css/immersive-webgl.css
-          test -f assets/js/immersive-webgl.js
-          test -f assets/js/immersive-webgl-brandbook.js
+          test -f assets/css/immersive-v6.css
+          test -f assets/js/immersive-v6.js
+          test -f assets/js/immersive-v6-loader.js
           test -f assets/js/contact-immersive.js
       - name: Check exact brandbook asset contract
         run: |
           set -e
-          file assets/images/scaleops-mark-exact.png | grep -q 'PNG image data'
           grep -q 'viewBox="0 0 661 433"' assets/images/scaleops-mark-brandbook.svg
           grep -q 'data:image/png;base64,' assets/images/scaleops-mark-brandbook.svg
           grep -q 'scaleops-mark-brandbook.svg' index.html
-          grep -q 'scaleops-mark-brandbook.svg' assets/js/immersive-webgl-brandbook.js
-      - name: Check real WebGL immersive contract
+          grep -q 'scaleops-mark-brandbook.svg' assets/js/immersive-v6-loader.js
+      - name: Check cinematic WebGL V6 contract
         run: |
           set -e
           grep -q '<canvas id="webgl"' index.html
-          grep -q 'type="module" src="assets/js/immersive-webgl-brandbook.js' index.html
-          grep -q 'three@0.180.0' assets/js/immersive-webgl.js
-          grep -q 'three@0.180.0' assets/js/immersive-webgl-brandbook.js
-          grep -q 'WebGLRenderer' assets/js/immersive-webgl.js
-          grep -q 'CylinderGeometry' assets/js/immersive-webgl.js
-          grep -q 'createFunnelSegment' assets/js/immersive-webgl.js
-          grep -q 'makeRupee' assets/js/immersive-webgl.js
+          grep -q 'type="importmap"' index.html
+          grep -q 'immersive-v6-loader.js' index.html
+          grep -q 'EffectComposer' assets/js/immersive-v6.js
+          grep -q 'UnrealBloomPass' assets/js/immersive-v6.js
+          grep -q 'ExtrudeGeometry' assets/js/immersive-v6.js
+          grep -q 'makeFunnelWalls' assets/js/immersive-v6.js
+          grep -q 'makeLogo3D' assets/js/immersive-v6.js
+          grep -q 'makeRupee' assets/js/immersive-v6.js
+          grep -q 'splineOffset' assets/js/immersive-v6.js
           grep -q 'data-scene="logo"' index.html
           grep -q 'data-scene="orbit"' index.html
           grep -q 'data-scene="rupee"' index.html
@@ -55,10 +54,12 @@ jobs:
       - name: Check responsive contract
         run: |
           set -e
-          grep -q '@media (max-width:900px)' assets/css/immersive-webgl.css
-          grep -q '@media (max-width:600px)' assets/css/immersive-webgl.css
-          grep -q 'svh' assets/css/immersive-webgl.css
-          grep -q 'devicePixelRatio' assets/js/immersive-webgl.js
+          grep -q '@media(max-width:1050px)' assets/css/immersive-v6.css
+          grep -q '@media(max-width:600px)' assets/css/immersive-v6.css
+          grep -q 'svh' assets/css/immersive-v6.css
+          grep -q 'devicePixelRatio' assets/js/immersive-v6.js
+          grep -q 'isMobile' assets/js/immersive-v6.js
+          grep -q 'isTablet' assets/js/immersive-v6.js
       - name: Check booking backend contract
         run: |
           set -e
@@ -72,8 +73,8 @@ jobs:
           grep -q 'value="Flexible"' contact/index.html
       - name: Check JavaScript syntax
         run: |
-          node --check assets/js/immersive-webgl.js
-          node --check assets/js/immersive-webgl-brandbook.js
+          node --check assets/js/immersive-v6.js
+          node --check assets/js/immersive-v6-loader.js
           node --check assets/js/contact-immersive.js
       - name: Check obvious placeholders
         run: |
