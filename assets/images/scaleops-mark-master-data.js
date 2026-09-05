@@ -1,0 +1,1 @@
+window.SCALEOPS_MASTER_LOGO='assets/images/scaleops-mark-brandbook.svg?v=brandbook-final-20260905';
