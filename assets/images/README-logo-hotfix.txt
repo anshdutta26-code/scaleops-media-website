@@ -1,0 +1,1 @@
+Brandbook logo hotfix asset uses scaleops-mark-brandbook.svg as a self-contained fallback. Production references continue to point to scaleops-mark-exact.png.
