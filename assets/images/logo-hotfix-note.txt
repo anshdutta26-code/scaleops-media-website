@@ -1,0 +1,1 @@
+Temporary note: production logo issue traced to binary asset mismatch. Self-contained brandbook SVG added for replacement.
