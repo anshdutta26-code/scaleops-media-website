@@ -3,7 +3,7 @@ import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
-import { LOGO_URI, LOGO_ASPECT } from './logo-data.js?v=final1';
+import { LOGO_URI, LOGO_ASPECT } from './logo-data.js?v=final2';
 
 const canvas = document.querySelector('#webgl');
 const sections = [...document.querySelectorAll('.scene')];
@@ -127,21 +127,7 @@ function glowSprite(hex = C.blue, scale = 4, opacity = 0.55) {
 function makeLogo(scale = 3) {
   const group = new THREE.Group();
   const geo = new THREE.PlaneGeometry(scale * LOGO_ASPECT, scale);
-  // A shallow layered extrusion keeps the exact uploaded silhouette untouched.
-  for (let i = 0; i < 3; i++) {
-    const layer = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({
-      map: markTex,
-      transparent: true,
-      opacity: 0.09 + i * 0.06,
-      depthTest: false,
-      depthWrite: false,
-      toneMapped: false,
-      side: THREE.DoubleSide
-    }));
-    layer.position.set(-i * 0.012, i * 0.008, -0.12 + i * 0.04);
-    layer.renderOrder = 90 + i;
-    group.add(layer);
-  }
+  // A single exact plane prevents ghosted or doubled logo silhouettes.
   const front = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({
     map: markTex,
     transparent: true,
@@ -463,7 +449,9 @@ function activeIndex() {
 }
 function syncDOM(progress, index) {
   sections.forEach((s, i) => s.classList.toggle('active', i === index));
-  const showLogo = index <= 1 || index === sections.length - 1;
+  // The central mark is rendered by WebGL. Keeping the DOM overlay hidden
+  // prevents a second copy from sitting over the live scene.
+  const showLogo = false;
   if (logoOverlay) {
     logoOverlay.style.opacity = showLogo ? '1' : '0';
     logoOverlay.style.visibility = showLogo ? 'visible' : 'hidden';
@@ -495,6 +483,10 @@ function animate() {
   const index = activeIndex();
   syncDOM(progress, index);
   groups.forEach((g, i) => {
+    // Reveal only the active scroll stage. Future and previous graphics must
+    // not remain visible through the tunnel behind the current composition.
+    g.visible = i === index;
+    if (!g.visible) return;
     const d = Math.abs(g.position.z - camera.position.z);
     const focus = THREE.MathUtils.clamp(1 - d / 18, 0, 1);
     g.scale.setScalar(0.97 + focus * 0.045);
