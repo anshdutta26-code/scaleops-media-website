@@ -1,146 +1,79 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#02050b">
-  <meta name="robots" content="noindex,nofollow">
-  <meta name="description" content="ScaleOps V7 immersive 3D growth systems preview">
-  <title>ScaleOps V7 — Immersive Growth Systems</title>
-  <link rel="icon" type="image/png" href="assets/scaleops-mark.png?v=v7-logo4">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=v7-1">
-  <style>
-    #logo-overlay{z-index:25!important;display:block!important;visibility:visible!important;width:min(34vw,520px)!important;max-height:52vh;object-fit:contain;pointer-events:none;will-change:transform,opacity;filter:drop-shadow(0 0 22px rgba(47,128,237,.95)) drop-shadow(0 0 58px rgba(105,223,255,.34))!important}
-    .brand img{width:76px!important;height:52px!important;object-fit:contain!important;filter:drop-shadow(0 0 12px rgba(47,128,237,.6))}
-    @media(max-width:900px){#logo-overlay{width:min(50vw,420px)!important}.brand img{width:58px!important;height:44px!important}}
-    @media(max-width:600px){#logo-overlay{width:min(68vw,350px)!important}.brand img{width:54px!important;height:40px!important}}
-  </style>
-  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#01040a">
+<meta name="description" content="ScaleOps Media engineers connected growth systems across acquisition, conversion, lifecycle, automation, analytics and operations.">
+<meta name="robots" content="noindex,nofollow">
+<title>ScaleOps Media — Final V7 Preview</title>
+<link id="scaleops-favicon" rel="icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./final.css?v=final1">
+<style>.site-footer{position:relative;z-index:20;min-height:170px;padding:42px clamp(24px,5vw,78px);border-top:1px solid rgba(105,223,255,.12);background:linear-gradient(180deg,rgba(2,8,18,.5),rgba(1,4,10,.96));display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:28px;color:#8ea2ba;font-size:12px}.site-footer img{width:62px;height:62px;object-fit:contain;filter:drop-shadow(0 0 14px rgba(47,128,237,.55))}.site-footer p{max-width:620px;line-height:1.6}.site-footer a{color:#dff8ff;font-weight:700}@media(max-width:700px){.site-footer{grid-template-columns:1fr;text-align:center;justify-items:center;padding-bottom:72px}.site-footer p{margin:0}}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
 </head>
-<body>
-  <canvas id="webgl" aria-hidden="true"></canvas>
-  <div class="static-fallback" aria-hidden="true"><img src="assets/scaleops-mark.png?v=v7-logo4" alt=""></div>
-  <img id="logo-overlay" src="assets/scaleops-mark.png?v=v7-logo4" alt="" aria-hidden="true">
+<body data-build="scaleops-v7-final">
+<canvas id="webgl" aria-hidden="true"></canvas>
+<div class="static-fallback" aria-hidden="true"><img class="js-scaleops-logo" alt=""></div>
+<img id="logo-overlay" class="js-scaleops-logo" alt="" aria-hidden="true">
+<header class="topbar">
+  <a class="brand" href="#home" aria-label="ScaleOps Media home"><img class="js-scaleops-logo" alt="ScaleOps logo"></a>
+  <nav aria-label="Primary navigation"><a href="#systems">Systems</a><a href="#services">Services</a><a href="#proof">Proof</a><a href="#insights">Insights</a><a href="/scaleops-media-website/contact/">Contact</a></nav>
+  <a class="cta small" href="/scaleops-media-website/contact/">Book a Strategy Call →</a>
+  <button class="menu" type="button" aria-label="Open menu">☰</button>
+</header>
+<nav class="mobile-menu" aria-label="Mobile navigation"><a href="#systems">Systems</a><a href="#services">Services</a><a href="#proof">Proof</a><a href="#insights">Insights</a><a href="/scaleops-media-website/contact/">Contact</a><a href="/scaleops-media-website/contact/">Book a Strategy Call</a></nav>
+<main>
+  <section id="home" class="scene active">
+    <div class="copy left"><p class="eyebrow">Growth systems for ambitious brands</p><h1>We Don’t Run Ads.<br>We Build <em>Growth Systems.</em></h1><p class="lead">ScaleOps connects acquisition, conversion, lifecycle, automation and decision intelligence into one operating system for measurable, compounding growth.</p><div class="actions"><a class="cta" href="/scaleops-media-website/contact/">Book a Strategy Call →</a><a class="ghost" href="#proof">See the proof</a></div></div>
+    <div class="copy right metrics"><article><strong>$17.5K</strong><span>Highest monthly paid budget managed</span></article><article><strong>₹2L → ₹8L</strong><span>Monthly revenue movement after funnel and process fixes</span></article></div>
+  </section>
 
-  <header class="topbar">
-    <a class="brand" href="#home" aria-label="ScaleOps home"><img src="assets/scaleops-mark.png?v=v7-logo4" alt="ScaleOps logo"></a>
-    <nav aria-label="Primary navigation"><a href="#journey">Journey</a><a href="#systems">Systems</a><a href="#services">Services</a><a href="#proof">Proof</a><a href="#insights">Insights</a></nav>
-    <a class="cta small" href="../contact/">Book a Strategy Call →</a>
-    <button class="menu" type="button" aria-label="Open menu">☰</button>
-  </header>
-  <nav class="mobile-menu" aria-label="Mobile navigation"><a href="#journey">Journey</a><a href="#systems">Systems</a><a href="#services">Services</a><a href="#proof">Proof</a><a href="#insights">Insights</a><a href="../contact/">Book a Strategy Call</a></nav>
+  <section class="scene">
+    <div class="copy left"><p class="eyebrow">Acquire</p><h2>Qualified demand starts with the <em>right signal.</em></h2><p>Paid media, creative testing and authority content should attract customers the rest of the system is ready to convert.</p></div>
+    <div class="copy right stage-note"><span>Customer journey</span><strong>Attention becomes useful only when the next step is engineered.</strong><p>Demand → qualification → action.</p></div>
+  </section>
 
-  <main>
-    <section id="home" class="scene active" data-stage="0">
-      <div class="copy left">
-        <p class="eyebrow">Growth systems for ambitious brands</p>
-        <h1>We don’t run ads.<br>We build <em>growth systems.</em></h1>
-        <p class="lead">ScaleOps connects acquisition, conversion, lifecycle, automation and decision intelligence into one commercial operating system.</p>
-        <div class="actions"><a class="cta" href="../contact/">Book a Strategy Call →</a><a class="ghost" href="#proof">See the proof</a></div>
-      </div>
-      <div class="copy right minimal"><span>Immersive journey</span><strong>Scroll into the system</strong><p>The exact ScaleOps mark leads the experience. The environment changes around the business journey — not the other way around.</p></div>
-    </section>
+  <section class="scene">
+    <div class="copy left"><p class="eyebrow">Convert</p><h2>Fix the leaks before you pour in more demand.</h2><p>Offer clarity, landing-page architecture, qualification and sales handoff turn expensive attention into commercial movement.</p></div>
+    <div class="copy right minimal"><span>Conversion system</span><strong>Offer → Funnel → Sales handoff</strong><p>The camera moves through the open conversion aperture while the funnel walls stay outside the protected viewing corridor.</p></div>
+  </section>
 
-    <section id="journey" class="scene" data-stage="1">
-      <div class="copy left">
-        <p class="eyebrow">Customer + business journey</p>
-        <h2>Attention only matters when it moves toward <em>commercial value.</em></h2>
-        <p class="lead">The environment narrows around the real journey: Acquire → Convert → Retain → Operate → Scale.</p>
-      </div>
-      <div class="copy right stage-note"><span>Acquire</span><strong>Create qualified demand.</strong><p>Reach the right audience with stronger positioning, creative and channel economics.</p></div>
-    </section>
+  <section class="scene">
+    <div class="copy left"><p class="eyebrow">From attention to value</p><h2>Traffic is not the outcome.<br><em>Revenue is.</em></h2><p>ScaleOps connects CAC, conversion quality and downstream value so growth decisions are made against business economics—not vanity metrics.</p></div>
+    <div class="copy right stage-note"><span>Value transformation</span><strong>A clean ₹ reveal marks the shift from activity to commercial impact.</strong><p>CAC → conversion → LTV.</p></div>
+  </section>
 
-    <section class="scene" data-stage="2">
-      <div class="copy left stage-note"><span>Convert</span><strong>Turn intent into action.</strong><p>Offer clarity, landing experience, CRO, qualification and sales handoff work as one conversion system.</p></div>
-      <div class="copy right">
-        <p class="eyebrow">The funnel becomes the environment</p>
-        <h2>Fix the leaks before you pour in <em>more demand.</em></h2>
-        <p class="lead">The camera enters the funnel without crossing the geometry. Light follows the active bottleneck while the environment tightens around conversion.</p>
-      </div>
-    </section>
+  <section id="systems" class="scene">
+    <div class="copy left"><p class="eyebrow">Retain</p><h2>Growth compounds when the customer journey keeps working.</h2><p>CRM, lifecycle follow-up, nurture, win-back and retention systems protect the value already acquired.</p></div>
+    <div class="copy right minimal"><span>Connected lifecycle</span><strong>Retain → Nurture → Increase LTV</strong><p>Customer nodes orbit one economic core instead of living in disconnected tools.</p></div>
+  </section>
 
-    <section class="scene" data-stage="3">
-      <div class="copy left">
-        <p class="eyebrow">From activity to value</p>
-        <h2>The ScaleOps mark gives way to a <em>clean 3D ₹.</em></h2>
-        <p class="lead">Revenue becomes the visual centre only after demand and conversion are connected.</p>
-      </div>
-      <div class="copy right stage-note"><span>Value creation</span><strong>Traffic is not the outcome. Revenue is.</strong><p>Better conversion, follow-up and retention determine whether acquisition compounds.</p></div>
-    </section>
+  <section id="services" class="scene">
+    <div class="copy left"><p class="eyebrow">Operate</p><h2>Automation without ownership is just faster chaos.</h2><p>We connect CRM workflows, routing, alerts, dashboards, SOPs and operating capacity so execution becomes repeatable.</p></div>
+    <div class="copy right minimal"><span>Growth operations</span><strong>CRM → Automation → Analytics → SOPs</strong><p>Systems remove repetitive friction and expose what needs a human decision.</p></div>
+  </section>
 
-    <section id="systems" class="scene" data-stage="4">
-      <div class="copy left stage-note"><span>Retain</span><strong>Increase the value of the relationship.</strong><p>Lifecycle communication, segmentation and retention turn one conversion into a longer customer journey.</p></div>
-      <div class="copy right">
-        <p class="eyebrow">Connected growth engine</p>
-        <h2>Systems work because the <em>connections work.</em></h2>
-        <p class="lead">Acquisition, conversion, lifecycle, automation, analytics and growth operations illuminate as parts of one architecture.</p>
-      </div>
-    </section>
+  <section id="proof" class="scene">
+    <div class="copy left"><p class="eyebrow">Scale</p><h2>Scale what works.<br><em>Not what merely spends.</em></h2><p>Once acquisition, conversion and operations hold together, more volume can create more value instead of more leakage.</p></div>
+    <div class="copy right metrics"><article><strong>+39.4%</strong><span>Email open-rate improvement</span></article><article><strong>+165.9%</strong><span>Email click-rate improvement</span></article></div>
+  </section>
 
-    <section id="services" class="scene" data-stage="5">
-      <div class="copy left">
-        <p class="eyebrow">Operate</p>
-        <h2>Automation should remove friction — not create <em>faster chaos.</em></h2>
-        <p class="lead">CRM, routing, follow-up, alerts, dashboards and ownership are visualised as a live operating network.</p>
-      </div>
-      <div class="copy right stage-note"><span>Systems we build</span><strong>Paid Acquisition · CRO · CRM · Analytics · Growth Ops</strong><p>Modular enough to fix one constraint. Integrated enough to become growth infrastructure.</p></div>
-    </section>
+  <section id="insights" class="scene">
+    <div class="copy left"><p class="eyebrow">Decision intelligence</p><h2>See the system before you optimise the tactic.</h2><p>We use analytics to diagnose where growth is actually constrained—creative, funnel, lifecycle, automation or operating capacity.</p></div>
+    <div class="copy right stage-note"><span>Operator insights</span><strong>Why more ad spend does not fix a broken backend.</strong><p>CAC is not just an ad metric. Automation is not a strategy. The whole journey has to work.</p></div>
+  </section>
 
-    <section id="proof" class="scene" data-stage="6">
-      <div class="copy left">
-        <p class="eyebrow">Scale</p>
-        <h2>Scale what works without multiplying <em>operating friction.</em></h2>
-        <div class="metrics"><article><strong>₹2L → ₹8L</strong><span>monthly revenue movement</span></article><article><strong>$17.5K</strong><span>highest monthly paid budget managed</span></article></div>
-      </div>
-      <div class="copy right metrics"><article><strong>+39.4%</strong><span>email open-rate improvement</span></article><article><strong>+165.9%</strong><span>email click-rate improvement</span></article></div>
-    </section>
-
-    <section id="insights" class="scene" data-stage="7">
-      <div class="copy left">
-        <p class="eyebrow">Decision intelligence</p>
-        <h2>See the system clearly enough to know <em>what to fix next.</em></h2>
-        <p class="lead">CAC, LTV, funnel performance, lifecycle and operating capacity become a decision environment rather than another report.</p>
-      </div>
-      <div class="copy right stage-note"><span>Authority content</span><strong>Why more ad spend does not fix a broken backend.</strong><p>Growth thinking begins where the campaign report ends.</p></div>
-    </section>
-
-    <section class="scene final" data-stage="8">
-      <div class="copy left">
-        <p class="eyebrow">Back to the system</p>
-        <h2>Value compounds when the operating system <em>gets stronger.</em></h2>
-        <p class="lead">The ₹ resolves back into the exact ScaleOps mark. The goal is not more activity — it is a system that keeps improving.</p>
-      </div>
-      <div class="copy right stage-note"><span>Ready?</span><strong>Find the real constraint.</strong><p>Bring the funnel, campaign, CRM or operating problem slowing growth.</p><a class="cta" href="../contact/">Book a Strategy Call →</a></div>
-    </section>
-  </main>
-
-  <div class="journey-label" aria-hidden="true"><i></i><span>Acquire</span><span>Convert</span><span>Retain</span><span>Operate</span><span>Scale</span></div>
-  <script>
-  (()=>{
-    const logo=document.getElementById('logo-overlay');
-    const scenes=[...document.querySelectorAll('.scene')];
-    if(!logo||!scenes.length)return;
-    const syncLogo=()=>{
-      const y=window.scrollY+window.innerHeight*.5;
-      let active=0,best=Infinity;
-      scenes.forEach((s,i)=>{const c=s.offsetTop+s.offsetHeight*.5,d=Math.abs(c-y);if(d<best){best=d;active=i;}});
-      const show=active<=1||active===scenes.length-1;
-      logo.style.setProperty('display','block','important');
-      logo.style.setProperty('visibility','visible','important');
-      logo.style.setProperty('opacity',show?'1':'0','important');
-      logo.style.setProperty('z-index','25','important');
-      const parallax=Math.max(-7,Math.min(7,(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight||1)-.5)*14));
-      logo.style.setProperty('transform',`translate(-50%,-50%) perspective(1000px) rotateY(${parallax}deg) rotateX(${-parallax*.22}deg) scale(${show?1:0.92})`,'important');
-    };
-    logo.addEventListener('load',syncLogo,{once:true});
-    window.addEventListener('scroll',syncLogo,{passive:true});
-    window.addEventListener('resize',syncLogo,{passive:true});
-    syncLogo();
-  })();
-  </script>
-  <script type="module" src="app-v7.js?v=v7-logo4"></script>
+  <section class="scene final">
+    <div class="copy left"><p class="eyebrow">The system returns to one operating idea</p><h2>Build the engine.<br><em>Then compound it.</em></h2><p>The ScaleOps mark reforms as the journey closes—from acquisition to revenue and back to a system ready for the next cycle.</p></div>
+    <div class="copy right"><p class="eyebrow">Ready to diagnose the constraint?</p><h2>Let’s build the system behind your next stage of growth.</h2><div class="actions"><a class="cta" href="/scaleops-media-website/contact/">Book a Strategy Call →</a></div></div>
+  </section>
+</main>
+<div class="journey-label" aria-hidden="true"><i></i><span>Acquire</span><span>Convert</span><span>Retain</span><span>Operate</span><span>Scale</span></div>
+<footer class="site-footer"><img class="js-scaleops-logo" alt="ScaleOps logo"><p>Connected growth systems across acquisition, conversion, lifecycle, automation, analytics and operations.</p><a href="/scaleops-media-website/contact/">Book a Strategy Call →</a></footer>
+<script type="module" src="./app-final.js?v=final1"></script>
 </body>
 </html>
