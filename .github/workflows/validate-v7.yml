@@ -1,0 +1,53 @@
+name: Validate ScaleOps V7 preview
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'v7-preview/**'
+      - '.github/workflows/validate-v7.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate-v7:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Check V7 production assets
+        run: |
+          set -e
+          test -f v7-preview/index.html
+          test -f v7-preview/styles.css
+          test -f v7-preview/app-v7.js
+          test -f v7-preview/assets/scaleops-mark.png
+          file v7-preview/assets/scaleops-mark.png | grep -q 'PNG image data'
+      - name: Check exact logo delivery
+        run: |
+          set -e
+          grep -q 'assets/scaleops-mark.png' v7-preview/index.html
+          grep -q "assets/scaleops-mark.png?v=v7-2" v7-preview/app-v7.js
+          grep -q 'id="logo-overlay"' v7-preview/index.html
+          ! grep -q 'scaleops-mark-brandbook.svg' v7-preview/index.html
+          ! grep -q 'scaleops-mark-exact.png' v7-preview/app-v7.js
+      - name: Check cinematic V7 contract
+        run: |
+          set -e
+          grep -q 'EffectComposer' v7-preview/app-v7.js
+          grep -q 'UnrealBloomPass' v7-preview/app-v7.js
+          grep -q 'CatmullRomCurve3' v7-preview/app-v7.js
+          grep -q 'ExtrudeGeometry' v7-preview/app-v7.js
+          grep -q 'funnelWalls' v7-preview/app-v7.js
+          grep -q 'inner=5.9' v7-preview/app-v7.js
+          grep -q 'Acquire' v7-preview/index.html
+          grep -q 'Convert' v7-preview/index.html
+          grep -q 'Retain' v7-preview/index.html
+          grep -q 'Operate' v7-preview/index.html
+          grep -q 'Scale' v7-preview/index.html
+      - name: Check responsive contract
+        run: |
+          set -e
+          grep -q '@media(max-width:900px)' v7-preview/styles.css
+          grep -q '@media(max-width:600px)' v7-preview/styles.css
+          grep -q 'devicePixelRatio' v7-preview/app-v7.js
+      - name: Check JavaScript syntax
+        run: node --check v7-preview/app-v7.js
