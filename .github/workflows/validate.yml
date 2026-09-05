@@ -16,50 +16,50 @@ jobs:
           test -f index.html
           test -f contact/index.html
           test -f thanks/index.html
-          test -f assets/images/scaleops-mark-brandbook.svg
-          test -f assets/css/immersive-v6.css
-          test -f assets/js/immersive-v6.js
-          test -f assets/js/immersive-v6-loader.js
+          test -f v7-preview/final.css
+          test -f v7-preview/app-final.js
+          test -f v7-preview/logo-data.js
+          for i in 0 1 2 3 4 5 6; do test -f "v7-preview/logo/chunk${i}.js"; done
           test -f assets/js/contact-immersive.js
-      - name: Check exact brandbook asset contract
+      - name: Check approved logo contract
         run: |
           set -e
-          grep -q 'viewBox="0 0 661 433"' assets/images/scaleops-mark-brandbook.svg
-          grep -q 'data:image/png;base64,' assets/images/scaleops-mark-brandbook.svg
-          grep -q 'scaleops-mark-brandbook.svg' index.html
-          grep -q 'scaleops-mark-brandbook.svg' assets/js/immersive-v6-loader.js
-      - name: Check cinematic WebGL V6 contract
+          grep -q 'js-scaleops-logo' index.html
+          grep -q 'js-scaleops-logo' contact/index.html
+          grep -q 'js-scaleops-logo' thanks/index.html
+          grep -q 'LOGO_URI' v7-preview/logo-data.js
+          grep -q "data:image/png;base64," v7-preview/logo-data.js
+          grep -q 'LOGO_ASPECT' v7-preview/app-final.js
+          ! grep -q 'scaleops-mark-brandbook.svg' index.html
+          ! grep -q 'assets/scaleops-mark.png' index.html
+      - name: Check cinematic WebGL V7 contract
         run: |
           set -e
           grep -q '<canvas id="webgl"' index.html
           grep -q 'type="importmap"' index.html
-          grep -q 'immersive-v6-loader.js' index.html
-          grep -q 'EffectComposer' assets/js/immersive-v6.js
-          grep -q 'UnrealBloomPass' assets/js/immersive-v6.js
-          grep -q 'ExtrudeGeometry' assets/js/immersive-v6.js
-          grep -q 'makeFunnelWalls' assets/js/immersive-v6.js
-          grep -q 'makeLogo3D' assets/js/immersive-v6.js
-          grep -q 'makeRupee' assets/js/immersive-v6.js
-          grep -q 'splineOffset' assets/js/immersive-v6.js
-          grep -q 'data-scene="logo"' index.html
-          grep -q 'data-scene="orbit"' index.html
-          grep -q 'data-scene="rupee"' index.html
-          grep -q 'data-scene="funnel"' index.html
-          grep -q 'data-scene="systems"' index.html
-          grep -q 'data-scene="services"' index.html
-          grep -q 'data-scene="proof"' index.html
-          grep -q 'data-scene="insights"' index.html
-          grep -q 'data-scene="return"' index.html
-          grep -q 'data-scene="final"' index.html
+          grep -q 'app-final.js' index.html
+          grep -q 'EffectComposer' v7-preview/app-final.js
+          grep -q 'UnrealBloomPass' v7-preview/app-final.js
+          grep -q 'ExtrudeGeometry' v7-preview/app-final.js
+          grep -q 'makeFunnelWalls' v7-preview/app-final.js
+          grep -q 'makeLogo' v7-preview/app-final.js
+          grep -q 'makeRupee' v7-preview/app-final.js
+          grep -q 'CatmullRomCurve3' v7-preview/app-final.js
+          grep -q 'inner = 6.25' v7-preview/app-final.js
+          grep -q 'Acquire' index.html
+          grep -q 'Convert' index.html
+          grep -q 'Retain' index.html
+          grep -q 'Operate' index.html
+          grep -q 'Scale' index.html
       - name: Check responsive contract
         run: |
           set -e
-          grep -q '@media(max-width:1050px)' assets/css/immersive-v6.css
-          grep -q '@media(max-width:600px)' assets/css/immersive-v6.css
-          grep -q 'svh' assets/css/immersive-v6.css
-          grep -q 'devicePixelRatio' assets/js/immersive-v6.js
-          grep -q 'isMobile' assets/js/immersive-v6.js
-          grep -q 'isTablet' assets/js/immersive-v6.js
+          grep -q '@media(max-width:900px)' v7-preview/final.css
+          grep -q '@media(max-width:600px)' v7-preview/final.css
+          grep -q 'svh' v7-preview/final.css
+          grep -q 'devicePixelRatio' v7-preview/app-final.js
+          grep -q 'isMobile' v7-preview/app-final.js
+          grep -q 'isTablet' v7-preview/app-final.js
       - name: Check booking backend contract
         run: |
           set -e
@@ -73,8 +73,8 @@ jobs:
           grep -q 'value="Flexible"' contact/index.html
       - name: Check JavaScript syntax
         run: |
-          node --check assets/js/immersive-v6.js
-          node --check assets/js/immersive-v6-loader.js
+          node --check v7-preview/app-final.js
+          node --check v7-preview/logo-data.js
           node --check assets/js/contact-immersive.js
       - name: Check obvious placeholders
         run: |
