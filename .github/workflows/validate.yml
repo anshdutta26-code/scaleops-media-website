@@ -32,6 +32,24 @@ jobs:
           grep -q 'LOGO_ASPECT' v7-preview/app-final.js
           ! grep -q 'scaleops-mark-brandbook.svg' index.html
           ! grep -q 'assets/scaleops-mark.png' index.html
+      - name: Verify embedded logo binary
+        run: |
+          python - <<'PY'
+          import re, base64, struct
+          from pathlib import Path
+          parts = []
+          for i in range(7):
+              text = Path(f'v7-preview/logo/chunk{i}.js').read_text()
+              match = re.fullmatch(r"export default '([^']*)';\s*", text)
+              assert match, f"invalid logo chunk {i}"
+              parts.append(match.group(1))
+          data = base64.b64decode(''.join(parts), validate=True)
+          assert data[:8] == b'\x89PNG\r\n\x1a\n', 'embedded logo is not PNG'
+          width, height = struct.unpack('>II', data[16:24])
+          assert (width, height) == (896, 819), (width, height)
+          assert len(data) > 40000, len(data)
+          print(f'embedded ScaleOps logo verified: {width}x{height}, {len(data)} bytes')
+          PY
       - name: Check cinematic WebGL V7 contract
         run: |
           set -e
