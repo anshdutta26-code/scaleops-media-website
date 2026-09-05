@@ -1,0 +1,1 @@
+Self-contained brandbook SVG exists at assets/images/scaleops-mark-brandbook.svg and will be used as the canonical visible mark.
