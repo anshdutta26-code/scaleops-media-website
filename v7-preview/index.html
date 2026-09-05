@@ -7,20 +7,26 @@
   <meta name="robots" content="noindex,nofollow">
   <meta name="description" content="ScaleOps V7 immersive 3D growth systems preview">
   <title>ScaleOps V7 — Immersive Growth Systems</title>
-  <link rel="icon" type="image/png" href="assets/scaleops-mark.png?v=v7">
+  <link rel="icon" type="image/png" href="assets/scaleops-mark.png?v=v7-logo3">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=v7-1">
+  <style>
+    #logo-overlay{z-index:25!important;display:block!important;visibility:visible!important;width:min(34vw,520px)!important;max-height:52vh;object-fit:contain;pointer-events:none;will-change:transform,opacity;filter:drop-shadow(0 0 22px rgba(47,128,237,.95)) drop-shadow(0 0 58px rgba(105,223,255,.34))!important}
+    .brand img{width:76px!important;height:52px!important;object-fit:contain!important;filter:drop-shadow(0 0 12px rgba(47,128,237,.6))}
+    @media(max-width:900px){#logo-overlay{width:min(50vw,420px)!important}.brand img{width:58px!important;height:44px!important}}
+    @media(max-width:600px){#logo-overlay{width:min(68vw,350px)!important}.brand img{width:54px!important;height:40px!important}}
+  </style>
   <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
 </head>
 <body>
   <canvas id="webgl" aria-hidden="true"></canvas>
-  <div class="static-fallback" aria-hidden="true"><img src="assets/scaleops-mark.png" alt=""></div>
-  <img id="logo-overlay" src="assets/scaleops-mark.png?v=v7" alt="" aria-hidden="true">
+  <div class="static-fallback" aria-hidden="true"><img src="assets/scaleops-mark.png?v=v7-logo3" alt=""></div>
+  <img id="logo-overlay" src="assets/scaleops-mark.png?v=v7-logo3" alt="" aria-hidden="true">
 
   <header class="topbar">
-    <a class="brand" href="#home" aria-label="ScaleOps home"><img src="assets/scaleops-mark.png?v=v7" alt="ScaleOps logo"></a>
+    <a class="brand" href="#home" aria-label="ScaleOps home"><img src="assets/scaleops-mark.png?v=v7-logo3" alt="ScaleOps logo"></a>
     <nav aria-label="Primary navigation"><a href="#journey">Journey</a><a href="#systems">Systems</a><a href="#services">Services</a><a href="#proof">Proof</a><a href="#insights">Insights</a></nav>
     <a class="cta small" href="../contact/">Book a Strategy Call →</a>
     <button class="menu" type="button" aria-label="Open menu">☰</button>
@@ -112,6 +118,29 @@
   </main>
 
   <div class="journey-label" aria-hidden="true"><i></i><span>Acquire</span><span>Convert</span><span>Retain</span><span>Operate</span><span>Scale</span></div>
+  <script>
+  (()=>{
+    const logo=document.getElementById('logo-overlay');
+    const scenes=[...document.querySelectorAll('.scene')];
+    if(!logo||!scenes.length)return;
+    const syncLogo=()=>{
+      const y=window.scrollY+window.innerHeight*.5;
+      let active=0,best=Infinity;
+      scenes.forEach((s,i)=>{const c=s.offsetTop+s.offsetHeight*.5,d=Math.abs(c-y);if(d<best){best=d;active=i;}});
+      const show=active<=1||active===scenes.length-1;
+      logo.style.setProperty('display','block','important');
+      logo.style.setProperty('visibility','visible','important');
+      logo.style.setProperty('opacity',show?'1':'0','important');
+      logo.style.setProperty('z-index','25','important');
+      const parallax=Math.max(-7,Math.min(7,(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight||1)-.5)*14));
+      logo.style.setProperty('transform',`translate(-50%,-50%) perspective(1000px) rotateY(${parallax}deg) rotateX(${-parallax*.22}deg) scale(${show?1:0.92})`,'important');
+    };
+    logo.addEventListener('load',syncLogo,{once:true});
+    window.addEventListener('scroll',syncLogo,{passive:true});
+    window.addEventListener('resize',syncLogo,{passive:true});
+    syncLogo();
+  })();
+  </script>
   <script type="module" src="app-v7.js?v=v7-2"></script>
 </body>
 </html>
