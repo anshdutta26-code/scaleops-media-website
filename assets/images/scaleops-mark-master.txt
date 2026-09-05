@@ -1,0 +1,1 @@
+Binary logo asset is stored as assets/images/scaleops-mark-master.png and uses the user-approved ScaleOps symbol only.
